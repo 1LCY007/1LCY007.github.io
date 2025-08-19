@@ -249,7 +249,9 @@
             display: flex;
             align-items: center;
             gap: .5rem;
+            flex-wrap: wrap;
         }
+        .links-list li details.note { flex-basis: 100%; margin-top: .4rem; }
 
         .links-list a[target="_blank"]::after {
             content: "↗";
@@ -300,6 +302,31 @@
             opacity: 1;
             pointer-events: auto;
         }
+        
+        /* 折叠注释样式 */
+        details.note {
+            margin-top: .75rem;
+            background: var(--bg-soft);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: .6rem .9rem;
+        }
+        details.note summary {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            user-select: none;
+        }
+        details.note summary::-webkit-details-marker { display: none; }
+        details.note .chev {
+            transition: transform .2s ease;
+            opacity: .75;
+        }
+        details.note[open] .chev { transform: rotate(90deg); }
+        details.note .note-body { margin-top: .5rem; color: var(--muted); }
     </style>
 </head>
 
@@ -338,29 +365,15 @@
     <section id="quicklinks" aria-labelledby="quicklinks-title">
         <div class="container">
             <h2 id="quicklinks-title">网站直达（Quick Links）</h2>
-            <p class="lead">把你提供的常用链接分组放在这里，支持输入框快速筛选。</p>
-
-            <!-- 搜索框 -->
+            <p class="lead">快捷搜索</p>
+            <!-- 搜索框
             <div class="searchbar">
                 <input id="linkSearch" type="search" placeholder="搜索网址 / 关键字（例如：教务、图书馆、选课）…" aria-label="搜索常用网站">
                 <button class="btn btn-outline" id="clearSearch" type="button">清空</button>
-            </div>
-
-            <div class="grid grid-3" id="cards">
-                <!-- 分组 1：教务与学习平台 -->
-                <div class="card" data-group="AI助手">
-                    <h3>AI助手</h3>
-                    <ul class="links-list">
-                        <!-- TODO: 替换为你的真实链接（target=_blank 新窗口打开） -->
-                        <li>🤖 <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a> <span
-                                class="muted">AI助手</span></li>
-                        <li>� <a href="https://chat.deepseek.com/" target="_blank" rel="noopener">DeepSeek</a> <span
-                                class="muted">AI助手</span></li>
-                        <li>🤖 <a href="https://www.doubao.com/chat/" target="_blank" rel="noopener">豆包</a> <span
-                                class="muted">AI助手</span></li>
-                    </ul>
-                </div>
-            </div>
+                <button class="btn btn-outline" id="expandNotes" type="button" title="展开页面内所有注释">展开注释</button>
+                <button class="btn btn-outline" id="collapseNotes" type="button" title="收起页面内所有注释">收起注释</button>
+            </div> -->
+            <div class="grid grid-3" id="cards"><!-- 内容由数据渲染 --></div>
 
             <!-- 你也可以继续复制 .card 模块，添加更多分组 -->
         </div>
@@ -390,7 +403,7 @@
     <!-- ====== 返回顶部按钮 ====== -->
     <a id="toTop" class="btn" href="#top" aria-label="返回顶部">↑ 返回顶部</a>
 
-    <!-- ====== JS：深色模式、返回顶部、年份、搜索过滤 ====== -->
+    <!-- ====== JS：深色模式、返回顶部、年份、搜索过滤、注释折叠控制 ====== -->
     <script>
         // 深色模式：记录用户偏好
         const html = document.documentElement;
@@ -413,10 +426,86 @@
         // 动态年份
         document.getElementById('year').textContent = new Date().getFullYear();
 
+        // ====== 数据渲染：卡片与条目 ======
+        const cardsContainer = document.getElementById('cards');
+        const groupsData = [
+            {
+                title: 'AI助手',
+                group: 'AI助手',
+                items: [
+                    {
+                        emoji: '🤖', name: 'ChatGPT', url: 'https://chatgpt.com/',
+                        desc: '',
+                        notes: ['优势：综合能力强，多语言出色', '门槛：Plus 付费、访问需代理', '替代：若无代理建议先用国内模型']
+                    },
+                    {
+                        emoji: '💬', name: 'DeepSeek', url: 'https://chat.deepseek.com/',
+                        desc: '',
+                        notes: ['优势：中文与推理表现好', '建议：高峰期可能限流']
+                    },
+                    {
+                        emoji: '🧠', name: '豆包', url: 'https://www.doubao.com/chat/',
+                        desc: '',
+                        notes: ['优势：中文阅读与文献解析好', '门槛：登录使用，功能持续更新', '建议：上传文档时注意隐私与版权']
+                    }
+                ]
+            },
+            {
+                title: '常用搜索网站',
+                group: '常用搜索网站',
+                items: [
+                    { emoji: '🤖', name: 'CSDN', url: 'https://www.csdn.net/', desc: '', notes: ['代码人的天堂'] },
+                    { emoji: '🤖', name: '知乎', url: 'https://www.zhihu.com/', desc: '', notes: ['问答社区'] },
+                    { emoji: '🤖', name: '百度', url: 'https://www.baidu.com/', desc: '', notes: ['搜索引擎'] },
+                    { emoji: '🤖', name: 'Google', url: 'https://www.google.com/', desc: '', notes: ['搜索引擎'] },
+                    { emoji: '🤖', name: 'Bing', url: 'https://www.bing.com/', desc: '', notes: ['搜索引擎'] },
+                    { emoji: '🤖', name: 'DuckDuckGo', url: 'https://www.duckduckgo.com/', desc: '', notes: ['搜索引擎'] },
+                    { emoji: '🤖', name: 'Ecosia', url: 'https://www.ecosia.org/', desc: '', notes: ['搜索引擎'] },
+                    { emoji: '🤖', name: 'Startpage', url: 'https://www.startpage.com/', desc: '', notes: ['搜索引擎'] },
+                ]
+            },
+            {
+                title: '常用工具',
+                group: '常用工具',
+                items: [
+                    { emoji: '🤖', name: '腾讯云', url: 'https://cloud.tencent.com', desc: '腾讯云服务器', notes: ['对比不同计费与活动优惠'] },
+                    { emoji: '🤖', name: '阿里云', url: 'https://www.aliyun.com', desc: '阿里云服务器', notes: ['新手适合的套餐与地域选择'] }
+                ]
+            }
+        ];
+
+        function renderCards() {
+            const html = groupsData.map(group => `
+                <div class="card" data-group="${group.group}">
+                    <h3>${group.title}</h3>
+                    <ul class="links-list">
+                        ${group.items.map(item => `
+                            <li>
+                                <details class="note">
+                                    <summary>
+                                        <span class="chev">▶</span>
+                                        <span>${item.emoji} <a href="${item.url}" target="_blank" rel="noopener">${item.name}</a> <span class="muted">${item.desc || ''}</span></span>
+                                    </summary>
+                                    <div class="note-body">
+                                        ${item.notes && item.notes.length ? `<ul>${item.notes.map(n => `<li>${n}</li>`).join('')}</ul>` : '<p class="muted">（可在此补充说明）</p>'}
+                                    </div>
+                                </details>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `).join('');
+            cardsContainer.innerHTML = html;
+            // 避免点击链接触发展开
+            cardsContainer.querySelectorAll('details.note summary a').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
+        }
+
+        renderCards();
+
         // 搜索过滤（按关键字匹配分组标题、data-group、以及链接文本）
         const searchInput = document.getElementById('linkSearch');
         const clearBtn = document.getElementById('clearSearch');
-        const cards = Array.from(document.querySelectorAll('#cards .card'));
+        let cards = Array.from(document.querySelectorAll('#cards .card'));
 
         function filterCards() {
             const q = searchInput.value.trim().toLowerCase();
@@ -425,14 +514,25 @@
                 card.style.display = text.includes(q) ? '' : 'none';
             });
         }
-        searchInput.addEventListener('input', filterCards);
-        clearBtn.addEventListener('click', () => { searchInput.value = ''; filterCards(); searchInput.focus(); });
+        if (searchInput) searchInput.addEventListener('input', filterCards);
+        if (clearBtn) clearBtn.addEventListener('click', () => { searchInput.value = ''; filterCards(); searchInput.focus(); });
         // 支持快捷键：按 "/" 聚焦搜索框
         document.addEventListener('keydown', (e) => {
-            if (e.key === '/' && document.activeElement !== searchInput) {
+            if (e.key === '/' && searchInput && document.activeElement !== searchInput) {
                 e.preventDefault(); searchInput.focus();
             }
         });
+
+        // 展开/收起全部注释块
+        const expandBtn = document.getElementById('expandNotes');
+        const collapseBtn = document.getElementById('collapseNotes');
+        function setAllDetails(open) {
+            document.querySelectorAll('details.note').forEach(d => {
+                if (open) d.setAttribute('open', ''); else d.removeAttribute('open');
+            });
+        }
+        if (expandBtn) expandBtn.addEventListener('click', () => setAllDetails(true));
+        if (collapseBtn) collapseBtn.addEventListener('click', () => setAllDetails(false));
     </script>
 
 </body>

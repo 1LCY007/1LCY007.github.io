@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数据驱动渲染 Demo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2rem;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            margin: 0 0 .5rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: .25rem 0;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .muted {
+            color: #6b7280;
+            margin-left: .5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>数据驱动渲染示例</h1>
+    <div id="sections"></div>
+
+    <script>
+        // 1. 定义数据
+        const DATA = [
+            {
+                title: "AI 助手",
+                items: [
+                    { emoji: "🤖", name: "ChatGPT", href: "https://chatgpt.com/", desc: "综合能力强" },
+                    { emoji: "🤖", name: "DeepSeek", href: "https://chat.deepseek.com/", desc: "国内顶尖 AI" }
+                ]
+            },
+            {
+                title: "常用工具",
+                items: [
+                    { emoji: "☁️", name: "腾讯云", href: "https://cloud.tencent.com", desc: "云服务器" },
+                    { emoji: "☁️", name: "阿里云", href: "https://www.aliyun.com", desc: "云服务器" }
+                ]
+            }
+        ];
+
+        // 2. 渲染函数
+        const mount = document.getElementById("sections");
+        DATA.forEach(sec => {
+            const div = document.createElement("div");
+            div.className = "card";
+            div.innerHTML = `<h3>${sec.title}</h3><ul></ul>`;
+            const ul = div.querySelector("ul");
+            sec.items.forEach(item => {
+                ul.innerHTML += `
+          <li>${item.emoji} <a href="${item.href}" target="_blank">${item.name}</a>
+          <span class="muted">${item.desc || ""}</span></li>`;
+            });
+            mount.appendChild(div);
+        });
+    </script>
+</body>
+
+</html>

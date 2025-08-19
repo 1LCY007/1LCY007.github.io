@@ -1,440 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>COE-assistor</title>
-    <meta name="description" content="an attempt to build COE-assistor." />
-    <link rel="icon" href="favicon.ico" />
-
-    <!-- ====== 可快速定制的设计变量 ====== -->
+    <title>网站维护中</title>
     <style>
-        :root {
-            --bg-image: url("image/pku.png");
-            /* TODO: 用你的背景图替换路径 */
-            --brand: #3b82f6;
-            --brand-2: #1d4ed8;
-            --accent: #10b981;
-            --text: #0f172a;
-            --muted: #475569;
-            --bg: #ffffff;
-            --bg-soft: #f8fafc;
-            --card: #ffffff;
-            --border: #e2e8f0;
-            --shadow: 0 10px 25px rgba(2, 6, 23, .08);
-        }
-
-        html[data-theme="dark"] {
-            --brand: #60a5fa;
-            --brand-2: #3b82f6;
-            --accent: #34d399;
-            --text: #e5e7eb;
-            --muted: #94a3b8;
-            --bg: #0b1020;
-            --bg-soft: #0f172a;
-            --card: #111827;
-            --border: #1f2937;
-            --shadow: 0 10px 25px rgba(0, 0, 0, .45);
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            height: 100%;
-        }
-
+        :root { --brand:#3b82f6; --accent:#10b981; --bg1:#0b1020; --bg2:#111827; --text:#e5e7eb; --muted:#94a3b8; }
+        html, body { height: 100%; }
         body {
             margin: 0;
-            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            color: var(--text);
-            background: var(--bg);
-            line-height: 1.6;
-        }
-
-        a {
-            color: var(--brand-2);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: min(1100px, 94vw);
-            margin: 0 auto;
-        }
-
-        .grid {
-            display: grid;
-            gap: 1.25rem;
-        }
-
-        .grid-3 {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .grid-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        @media (max-width: 960px) {
-            .grid-3 {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 680px) {
-
-            .grid-3,
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-            padding: 1.25rem;
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 36px rgba(2, 6, 23, .12);
-        }
-
-        .badge {
-            display: inline-block;
-            padding: .25rem .5rem;
-            border-radius: 999px;
-            background: var(--bg-soft);
-            border: 1px solid var(--border);
-            color: var(--muted);
-            font-size: .85rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            gap: .5rem;
-            align-items: center;
-            border: 1px solid transparent;
-            background: var(--brand);
-            color: #fff;
-            padding: .7rem 1rem;
-            border-radius: 12px;
-            font-weight: 600;
-            box-shadow: var(--shadow);
-        }
-
-        .btn:hover {
-            background: var(--brand-2);
-            text-decoration: none;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--brand);
-            border-color: var(--brand);
-        }
-
-        .btn-outline:hover {
-            background: var(--brand);
-            color: #fff;
-        }
-
-        header.site-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            backdrop-filter: saturate(180%) blur(12px);
-            background: color-mix(in srgb, var(--bg) 70%, transparent);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: .75rem 0;
-        }
-
-        .nav .brand {
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-
-        .nav .links {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .nav a {
-            color: var(--text);
-            font-weight: 600;
-            opacity: .9;
-        }
-
-        /* 英雄区：背景图可替换 --bg-image 变量 */
-        .hero {
-            position: relative;
-            min-height: 62vh;
             display: grid;
             place-items: center;
-            text-align: center;
-            color: #fff;
-            background: linear-gradient(180deg, rgba(2, 6, 23, .55), rgba(2, 6, 23, .6)), var(--bg-image);
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            margin: 0 0 .5rem;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 1.6vw, 1.2rem);
-            opacity: .95;
-        }
-
-        .hero .cta {
-            display: flex;
-            gap: .75rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        section {
-            padding: 3rem 0;
-        }
-
-        section h2 {
-            font-size: 1.6rem;
-            margin: 0 0 .5rem;
-        }
-
-        section p.lead {
-            color: var(--muted);
-            margin: 0 0 1rem;
-        }
-
-        /* 链接清单样式 */
-        .links-list {
-            list-style: none;
-            padding-left: 0;
-            margin: .5rem 0 0;
-        }
-
-        .links-list li {
-            padding: .25rem 0;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-
-        .links-list a[target="_blank"]::after {
-            content: "↗";
-            font-size: .85em;
-            opacity: .65;
-        }
-
-        /* 搜索栏 */
-        .searchbar {
-            display: flex;
-            gap: .5rem;
-            align-items: center;
-            margin: .75rem 0 1.25rem;
-        }
-
-        .searchbar input {
-            flex: 1;
-            padding: .7rem .9rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            background: var(--card);
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
             color: var(--text);
-            box-shadow: var(--shadow);
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
         }
-
-        .muted {
-            color: var(--muted);
+        .card {
+            width: min(720px, 92vw);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 24px 28px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.35);
+            text-align: center;
         }
-
-        footer {
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
-            background: var(--bg-soft);
-            color: var(--muted);
+        h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+        p { margin: .25rem 0; color: var(--muted); }
+        a.btn {
+            display: inline-block;
+            margin-top: 10px;
+            background: var(--brand);
+            color: #fff;
+            padding: .6rem 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(0,0,0,.25);
         }
-
-        /* 返回顶部按钮 */
-        #toTop {
-            position: fixed;
-            right: 16px;
-            bottom: 16px;
-            opacity: 0;
-            pointer-events: none;
-            transition: .2s ease;
-        }
-
-        #toTop.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        a.btn:hover { background: #1d4ed8; }
+        .url { margin-top: .6rem; }
+        .url a { color: #93c5fd; font-weight: 600; }
+        .url a:hover { text-decoration: underline; }
     </style>
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 </head>
-
 <body>
-    <!-- ====== 顶部导航 ====== -->
-    <header class="site-header">
-        <div class="container nav">
-            <div class="brand">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" />
-                </svg>
-                <span>常用工具分享</span>
-            </div>
-            <nav class="links" aria-label="Primary">
-                <a href="#quicklinks">黑白切换</a>
-                <button id="themeToggle" class="btn btn-outline" style="margin-left:.5rem" aria-label="切换主题">🌓</button>
-            </nav>
-        </div>
-    </header>
-
-    <!-- ====== 英雄区（背景图可换） ====== -->
-    <section class="hero" role="img" aria-label="校园背景图">
-        <div class="container" style="color:#fff;">
-            <span class="badge"
-                style="background:rgba(0,0,0,.25); color:#fff; border-color:rgba(255,255,255,.25)">WELCOME</span>
-            <h1>COE-assistor</h1>
-            <p>工道自然成,学为家国梦</p>
-            <div class="cta">
-                <a class="btn" href="#quicklinks">开始使用</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== 网站直达 ====== -->
-    <section id="quicklinks" aria-labelledby="quicklinks-title">
-        <div class="container">
-            <h2 id="quicklinks-title">网站直达（Quick Links）</h2>
-            <p class="lead">把你提供的常用链接分组放在这里，支持输入框快速筛选。</p>
-
-            <!-- 搜索框 -->
-            <div class="searchbar">
-                <input id="linkSearch" type="search" placeholder="搜索网址 / 关键字（例如：教务、图书馆、选课）…" aria-label="搜索常用网站">
-                <button class="btn btn-outline" id="clearSearch" type="button">清空</button>
-            </div>
-
-            <div class="grid grid-3" id="cards">
-                <!-- 分组 1：教务与学习平台 -->
-                <div class="card" data-group="AI助手">
-                    <h3>AI助手</h3>
-                    <ul class="links-list">
-                        <!-- TODO: 替换为你的真实链接（target=_blank 新窗口打开） -->
-                        <li>🤖 <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a> <span
-                                class="muted">AI助手</span></li>
-                        <li>� <a href="https://chat.deepseek.com/" target="_blank" rel="noopener">DeepSeek</a> <span
-                                class="muted">AI助手</span></li>
-                        <li>🤖 <a href="https://www.doubao.com/chat/" target="_blank" rel="noopener">豆包</a> <span
-                                class="muted">AI助手</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 你也可以继续复制 .card 模块，添加更多分组 -->
-        </div>
-    </section>
-
-    <!-- ====== 页脚 ====== -->
-    <footer>
-        <div class="container">
-            <div class="grid grid-3">
-                <div>
-                    <strong>COE-assistor</strong>
-                    <p class="muted">一站式直达校园常用服务入口。</p>
-                </div>
-                <div>
-                    <strong>快速导航</strong>
-                    <p class="muted">敬请期待</p>
-                </div>
-                <div>
-                    <strong>联系与反馈</strong>
-                    <p class="muted">敬请期待</p>
-                </div>
-            </div>
-            <p class="muted" style="margin-top:1rem;">© <span id="year"></span> COE-assistor · 高效直达每个入口</p>
-        </div>
-    </footer>
-
-    <!-- ====== 返回顶部按钮 ====== -->
-    <a id="toTop" class="btn" href="#top" aria-label="返回顶部">↑ 返回顶部</a>
-
-    <!-- ====== JS：深色模式、返回顶部、年份、搜索过滤 ====== -->
-    <script>
-        // 深色模式：记录用户偏好
-        const html = document.documentElement;
-        const key = 'theme-preference';
-        const saved = localStorage.getItem(key);
-        if (saved) html.setAttribute('data-theme', saved);
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            const current = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', current);
-            localStorage.setItem(key, current);
-        });
-
-        // 返回顶部显示逻辑
-        const toTop = document.getElementById('toTop');
-        const onScroll = () => {
-            if (window.scrollY > 600) toTop.classList.add('show'); else toTop.classList.remove('show');
-        };
-        document.addEventListener('scroll', onScroll, { passive: true });
-
-        // 动态年份
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // 搜索过滤（按关键字匹配分组标题、data-group、以及链接文本）
-        const searchInput = document.getElementById('linkSearch');
-        const clearBtn = document.getElementById('clearSearch');
-        const cards = Array.from(document.querySelectorAll('#cards .card'));
-
-        function filterCards() {
-            const q = searchInput.value.trim().toLowerCase();
-            cards.forEach(card => {
-                const text = (card.innerText + ' ' + (card.dataset.group || '')).toLowerCase();
-                card.style.display = text.includes(q) ? '' : 'none';
-            });
-        }
-        searchInput.addEventListener('input', filterCards);
-        clearBtn.addEventListener('click', () => { searchInput.value = ''; filterCards(); searchInput.focus(); });
-        // 支持快捷键：按 "/" 聚焦搜索框
-        document.addEventListener('keydown', (e) => {
-            if (e.key === '/' && document.activeElement !== searchInput) {
-                e.preventDefault(); searchInput.focus();
-            }
-        });
-    </script>
-
+    <div class="card" role="status" aria-live="polite">
+        <h1>网站正在维护</h1>
+        <p>我们正在进行升级维护，给你带来更好的体验。请稍后再来。</p>
+    </div>
 </body>
-
 </html>
+
