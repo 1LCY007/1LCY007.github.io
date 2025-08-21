@@ -355,8 +355,38 @@
                 style="background:rgba(0,0,0,.25); color:#fff; border-color:rgba(255,255,255,.25)">WELCOME</span>
             <h1>COE-assistor</h1>
             <p>工道自然成,学为家国梦</p>
-            <div class="cta">
-                <a class="btn" href="#quicklinks">开始使用</a>
+        </div>
+    </section>
+
+    <!-- ====== 开发者寄语 ====== -->
+    <section id="developer-message" aria-labelledby="developer-message-title">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="card">
+                    <h2 id="developer-message-title">👨‍💻 开发者寄语</h2>
+                    <p class="lead">欢迎使用 COE-assistor！</p>
+                    <p>开发者本人出入校园的时候，深知各位新生对许多工具的陌生，网络的使用也并不熟练，会导致许多时间被浪费在寻找工具上。</p>
+                    <p>因此开发了这个网站，希望它能成为你的得力助手，让学习和工作更加高效。</p>
+                    <p>不过也希望大家能够主动学习，掌握网络搜索的技巧，不要过分依赖该网站。</p>
+                    <p>如果你有任何建议，欢迎随时反馈。</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="badge">🚀 持续更新中</span>
+                        <span class="badge">💡 欢迎建议</span>
+                        <span class="badge">🎯 专注效率</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>📋 使用说明</h3>
+                    <ul class="links-list">
+                        <li>🔍 <strong>快速查找</strong>：点击卡片展开查看详细说明</li>
+                        <li>🌓 <strong>主题切换</strong>：右上角按钮切换明暗主题</li>
+                        <li>📱 <strong>响应式设计</strong>：支持各种设备访问</li>
+                        <li>⚡ <strong>一键直达</strong>：点击链接直接跳转目标网站</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted);">
+                        <em>"工道自然成，学为家国梦"</em> - 愿这个工具能助你在学习和工作中走得更远！
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -366,12 +396,10 @@
         <div class="container">
             <h2 id="quicklinks-title">网站直达（Quick Links）</h2>
             <p class="lead">快捷搜索</p>
-            <!-- 搜索框
-            <div class="searchbar">
+            <!-- 搜索框 -->
+            <!-- <div class="searchbar">
                 <input id="linkSearch" type="search" placeholder="搜索网址 / 关键字（例如：教务、图书馆、选课）…" aria-label="搜索常用网站">
                 <button class="btn btn-outline" id="clearSearch" type="button">清空</button>
-                <button class="btn btn-outline" id="expandNotes" type="button" title="展开页面内所有注释">展开注释</button>
-                <button class="btn btn-outline" id="collapseNotes" type="button" title="收起页面内所有注释">收起注释</button>
             </div> -->
             <div class="grid grid-3" id="cards"><!-- 内容由数据渲染 --></div>
 
@@ -388,12 +416,12 @@
                     <p class="muted">一站式直达校园常用服务入口。</p>
                 </div>
                 <div>
-                    <strong>快速导航</strong>
-                    <p class="muted">敬请期待</p>
+                    <strong></strong>
+                    <p class="muted"></p>
                 </div>
                 <div>
                     <strong>联系与反馈</strong>
-                    <p class="muted">敬请期待</p>
+                    <p class="muted">暂未开放</p>
                 </div>
             </div>
             <p class="muted" style="margin-top:1rem;">© <span id="year"></span> COE-assistor · 高效直达每个入口</p>
@@ -430,6 +458,17 @@
         const cardsContainer = document.getElementById('cards');
         const groupsData = [
             {
+                title: '北京大学服务',
+                group: '北京大学服务',  
+                items: [
+                    { emoji: '🤖', name: '信息门户', url: 'https://portal.pku.edu.cn/portal2017/#/index?rand=0.2772784015429557', desc: '', notes: ['信息门户'] },
+                    { emoji: '🤖', name: '教学网', url: 'https://course.pku.edu.cn/', desc: '', notes: ['教学网'] },
+                    { emoji: '🤖', name: '未名BBS', url: 'https://bbs.pku.edu.cn', desc: '', notes: ['BBS'] },
+                    { emoji: '🤖', name: 'Canvas', url: 'https://pku.instructure.com/login/canvas', desc: '', notes: ['Canvas'] },
+                    { emoji: '🤖', name: '党性教育平台', url: 'dangxiao.pku.edu.cn', desc: '', notes: ['党性教育平台'] },
+                ]
+            },
+            {
                 title: 'AI助手',
                 group: 'AI助手',
                 items: [
@@ -454,43 +493,59 @@
                 title: '常用搜索网站',
                 group: '常用搜索网站',
                 items: [
-                    { emoji: '🤖', name: 'CSDN', url: 'https://www.csdn.net/', desc: '', notes: ['代码人的天堂'] },
+                    { emoji: '🤖', name: 'CSDN', url: 'https://www.csdn.net/', desc: '', notes: ['问答社区'] },
                     { emoji: '🤖', name: '知乎', url: 'https://www.zhihu.com/', desc: '', notes: ['问答社区'] },
                     { emoji: '🤖', name: '百度', url: 'https://www.baidu.com/', desc: '', notes: ['搜索引擎'] },
-                    { emoji: '🤖', name: 'Google', url: 'https://www.google.com/', desc: '', notes: ['搜索引擎'] },
+                    { emoji: '🤖', name: 'Google', url: 'https://www.google.com/', desc: '', notes: ['搜索引擎，需要代理服务器'] },
                     { emoji: '🤖', name: 'Bing', url: 'https://www.bing.com/', desc: '', notes: ['搜索引擎'] },
                 ]
             },
-            {
-                title: '常用工具',
-                group: '常用工具',
-                items: [
-                    { emoji: '🤖', name: '腾讯云', url: 'https://cloud.tencent.com', desc: '腾讯云服务器', notes: ['对比不同计费与活动优惠'] },
-                    { emoji: '🤖', name: '阿里云', url: 'https://www.aliyun.com', desc: '阿里云服务器', notes: ['新手适合的套餐与地域选择'] }
-                ]
-            },
+            // {
+            //     title: '常用工具',
+            //     group: '常用工具',
+            //     items: [
+            //         { emoji: '🤖', name: '腾讯云', url: 'https://cloud.tencent.com', desc: '腾讯云服务器', notes: ['对比不同计费与活动优惠'] },
+            //         { emoji: '🤖', name: '阿里云', url: 'https://www.aliyun.com', desc: '阿里云服务器', notes: ['新手适合的套餐与活动优惠'] }
+            //     ]
+            // },
             {
                 title: '编程练习网站',
                 group: '编程练习网站',
                 items: [
-                    { emoji: '🤖', name: '力扣', url: 'https://leetcode.cn/', desc: '', notes: ['编程练习网站'] },
+                    { emoji: '🤖', name: '编程网格', url: 'https://programming.pku.edu.cn', desc: '', notes: ['北京大学的编程练习平台'] },
+                    { emoji: '🤖', name: 'openjudge', url: 'https://openjudge.cn/', desc: '', notes: ['编程练习网站，很多老师喜欢在这里留作业'] },
+                    { emoji: '🤖', name: '晴问', url: 'https://sunnywhy.com', desc: '', notes: ['编程练习网站'] },
+                    { emoji: '🤖', name: 'PTA', url: 'https://pintia.cn/', desc: '', notes: ['编程练习网站'] },
                     { emoji: '🤖', name: '洛谷', url: 'https://www.luogu.com.cn/', desc: '', notes: ['编程练习网站'] },
+                    { emoji: '🤖', name: '力扣', url: 'https://leetcode.cn/', desc: '', notes: ['编程练习网站'] },
                 ]
             },
             {
-                title: '实用工具APP下载',
-                group: '实用工具APP下载',       
+                title: '实用软件',
+                group: '实用软件',
                 items: [
-                    { emoji: '🤖', name: 'TapTap', url: 'https://www.taptap.com/', desc: '', notes: ['应用商店'] },
+                    { emoji: '🤖', name: 'typora', url: 'https://www.typora.io/', desc: '', notes: ['markdown编辑器'] },
+                    { emoji: '🤖', name: 'Cursor', url: 'https://cursor.com/cn', desc: '', notes: ['AI编程助手,继承了vscode的许多功能'] },
+                    { emoji: '🤖', name: 'zotero', url: 'https://www.zotero.org/', desc: '', notes: ['文献管理软件，便于论文阅读'] },
                 ]
             },
             {
-                title: '常用学习网站',
-                group: '常用学习网站',
+                title: '实用网站',
+                group: '实用网站',
                 items: [
-                    { emoji: '🤖', name: 'CSDN', url: 'https://www.csdn.net/', desc: '', notes: ['代码人的天堂'] },
+                    { emoji: '🤖', name: 'github', url: 'https://github.com/', desc: '', notes: ['各种开源代码，代码人的天堂'] },
+                    { emoji: '🤖', name: '数据分析', url: 'https://www.spsspro.com/', desc: '', notes: ['数据分析网站'] },
+                    { emoji: '🤖', name: '开源软件镜像站', url: 'https://mirrors.tuna.tsinghua.edu.cn/help/pypi/', desc: '', notes: ['清华大学开源软件镜像站'] },
+                    { emoji: '🤖', name: '剑桥词典', url: 'https://dictionary.cambridge.org/', desc: '', notes: ['剑桥词典，权威词典'] },
                 ]
-            }
+            },
+            {
+                title: '计算机语言学习  ',
+                group: '计算机语言学习',
+                items: [
+                    { emoji: '🤖', name: '代码调试', url: 'https://pythontutor.com/', desc: '', notes: ['Start coding online in Python, Java, C, C++, and JavaScript'] },
+                ]
+            },
 
         ];
 
