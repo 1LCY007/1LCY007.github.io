@@ -11,7 +11,7 @@
     <!-- ====== 可快速定制的设计变量 ====== -->
     <style>
         :root {
-            --bg-image: url("image/pku.png");
+            --bg-image: url("image/nav.png");
             /* TODO: 用你的背景图替换路径 */
             --brand: #3b82f6;
             --brand-2: #1d4ed8;
@@ -364,13 +364,13 @@
         </div>
     </header>
 
-    <!-- ====== 英雄区（背景图可换） ====== -->
-    <section class="hero" role="img" aria-label="校园背景图">
+    <!-- ====== 英雄区（渐变色背景） ====== -->
+    <section class="hero" role="img" aria-label="渐变色背景">
         <div class="container" style="color:#fff;">
             <span class="badge"
                 style="background:rgba(0,0,0,.25); color:#fff; border-color:rgba(255,255,255,.25)">WELCOME</span>
-            <h1>COE-assistor</h1>
-            <p>工道自然成,学为家国梦</p>
+            <h1>freshnav</h1>
+            <p>新生导航</p>
         </div>
     </section>
 
@@ -380,7 +380,7 @@
             <div class="grid grid-2">
                 <div class="card">
                     <h2 id="developer-message-title">👨‍💻 开发者寄语</h2>
-                    <p class="lead">欢迎使用 COE-assistor！</p>
+                    <p class="lead">欢迎使用 freshnav！</p>
                     <p>开发者本人初入校园的时候，深知各位新生对许多工具的陌生，网络的使用也并不熟练，会导致许多时间被浪费在寻找上。</p>
                     <p>因此开发了这个网站，希望它能成为你的得力助手，让学习和工作更加高效。</p>
                     <p>不过也希望大家能够主动学习掌握网络搜索的技巧，不要过分依赖该网站。</p>
@@ -401,7 +401,7 @@
                         <li>💡 <strong>关于计算机语言</strong>由于开发者使用的是python，因此许多网站都以python为主，其他语言的网站敬请期待更新！</li>
                     </ul>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted);">
-                        <em>"工道自然成，学为家国梦"</em> - 愿这个工具能助你在学习和工作中走得更远！
+                        <em>愿这个工具能助你在学习和工作中走得更远！</em>
                     </p>
                 </div>
             </div>
@@ -429,7 +429,7 @@
         <div class="container">
             <div class="grid grid-3">
                 <div>
-                    <strong>COE-assistor</strong>
+                    <strong>freshnav</strong>
                     <p class="muted">一站式直达校园常用服务入口。</p>
                 </div>
                 <div>
@@ -441,7 +441,7 @@
                     <p class="muted">暂未开放</p>
                 </div>
             </div>
-            <p class="muted" style="margin-top:1rem;">© <span id="year"></span> COE-assistor · 高效直达每个入口</p>
+            <p class="muted" style="margin-top:1rem;">© <span id="year"></span> freshnav · 高效直达每个入口</p>
         </div>
     </footer>
 
@@ -474,17 +474,7 @@
         // ====== 数据渲染：卡片与条目 ======
         const cardsContainer = document.getElementById('cards');
         const groupsData = [
-            {
-                title: '北京大学服务',
-                group: '北京大学服务',
-                items: [
-                    { emoji: '🏛️', name: '信息门户', url: 'https://portal.pku.edu.cn/portal2017/#/index?rand=0.2772784015429557', desc: '', notes: ['信息门户'] },
-                    { emoji: '📚', name: '教学网', url: 'https://course.pku.edu.cn/', desc: '', notes: ['教学网'] },
-                    { emoji: '💬', name: '未名BBS', url: 'https://bbs.pku.edu.cn', desc: '', notes: ['BBS'] },
-                    { emoji: '🎓', name: 'Canvas', url: 'https://pku.instructure.com/login/canvas', desc: '', notes: ['Canvas'] },
-                    { emoji: '⭐', name: '党性教育平台', url: 'dangxiao.pku.edu.cn', desc: '', notes: ['党性教育平台'] },
-                ]
-            },
+
             {
                 title: 'AI助手',
                 group: 'AI助手',
@@ -529,7 +519,7 @@
                 title: '编程练习网站',
                 group: '编程练习网站',
                 items: [
-                    { emoji: '🎯', name: '编程网格', url: 'https://programming.pku.edu.cn', desc: '', notes: ['北京大学的编程练习平台'] },
+                    { emoji: '🎯', name: '编程网格', url: 'https://programming.pku.edu.cn', desc: '', notes: ['编程练习平台'] },
                     { emoji: '⚖️', name: 'openjudge', url: 'https://openjudge.cn/', desc: '', notes: ['编程练习网站，很多老师喜欢在这里留作业'] },
                     { emoji: '☀️', name: '晴问', url: 'https://sunnywhy.com', desc: '', notes: ['编程练习网站'] },
                     { emoji: '📝', name: 'PTA', url: 'https://pintia.cn/', desc: '', notes: ['编程练习网站'] },
