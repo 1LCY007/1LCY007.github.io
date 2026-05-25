@@ -1,0 +1,29 @@
+%% Sometimes when a section can't be nicely modelled with the \entry[]... mechanism; hack our own
+\makerubrichead{Research Experiences}
+
+%% Assuming you've already given \addbibresource{own-bib.bib} in the main doc. Right? Right???
+\nocite{*}
+
+%% If you just want everything in one list
+% \printbibliography[heading={none}]
+
+% \printbibliography[heading={subbibliography},title={Journal Articles},type=article]
+
+% \printbibliography[heading={subbibliography},title={Conference Proceedings},type=inproceedings]
+
+% \printbibliography[heading={subbibliography},title={Books and Chapters},filter={booksandchapters}]
+
+
+\noindent\textbf{Continuous Planning \& Real-time Adaptation for Collaborative LTL Tasks} \hfill \textit{Jul. 2025 -- Present}
+\begin{itemize}[parsep=0.7ex, leftmargin=1.5em]
+  \item Built a multi‑heterogeneous robot simulation platform (Unitree Go2, Scout) in Gazebo; validated algorithm robustness via kinematics comparisons.
+  \item Designed a real‑time adaptive strategy for LTL task decomposition; currently transferring to physical robot experiments.
+  % \item \textbf{Expected output:} 1 journal paper in preparation for \textit{IJRR}.
+\end{itemize}
+
+\noindent\textbf{LLM‑based Multi‑robot Cooperative Task Planning in Open Worlds} \hfill \textit{Jan. 2026 -- Present}
+\begin{itemize}[parsep=0.7ex, leftmargin=1.5em]
+  \item Completed literature review and offline planning code; currently integrating AI2‑THOR simulation to test task allocation.
+  \item Developing an online replanning module using LLM reasoning to handle environmental changes.
+  % \item \textbf{Expected output:} 1 conference paper in preparation for \textit{ICRA}.
+\end{itemize}
