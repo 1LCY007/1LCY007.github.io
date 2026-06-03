@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chunyang Luo | Robotics CV</title>
+    <title>Chunyang Luo | Project Portfolio</title>
     <meta name="description"
-        content="Chunyang Luo, B.Eng. candidate in Robotics Engineering at Peking University. Research interests include multi-agent task planning, LLMs, and embodied AI." />
+        content="Chunyang Luo. Project portfolio in multi-agent systems, LLM-based planning and reasoning, embodied AI, and human-AI collaboration." />
     <link rel="icon" href="favicon.ico" />
     <style>
         :root {
@@ -336,6 +336,58 @@
             font-weight: 680;
         }
 
+        .hero-skills {
+            max-width: 760px;
+            margin: 0 0 28px;
+        }
+
+        .project-index {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 34px;
+        }
+
+        .project-link {
+            display: block;
+            min-height: 100%;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--paper);
+            padding: 20px;
+            color: var(--ink);
+            box-shadow: 0 9px 24px rgba(23, 32, 51, 0.05);
+        }
+
+        .project-link:hover {
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .project-link h3 {
+            margin: 6px 0 8px;
+            font-size: 1.08rem;
+            line-height: 1.28;
+        }
+
+        .project-link p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .project-detail {
+            scroll-margin-top: 92px;
+        }
+
+        .project-detail + .project-detail {
+            margin-top: 42px;
+        }
+
+        .demo-block {
+            margin-top: 18px;
+        }
+
         .project-feature {
             display: grid;
             grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
@@ -570,6 +622,7 @@
             .grid.three,
             .course-grid,
             .project-feature,
+            .project-index,
             .media-grid {
                 grid-template-columns: 1fr;
             }
@@ -617,13 +670,9 @@
                 <span>Chunyang Luo</span>
             </a>
             <nav class="nav-links" aria-label="Primary navigation">
-                <a href="#research">Research</a>
                 <a href="#projects">Projects</a>
-                <a href="#demos">Demos</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#cv-pdf">CV PDF</a>
+                <a href="#training">Training</a>
+                <a href="#awards">Awards</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -633,23 +682,31 @@
         <section class="hero">
             <div class="shell hero-grid">
                 <div>
-                    <p class="eyebrow">Robotics Engineering / Peking University</p>
-                    <h1>Multi-agent planning, LLM reasoning, and embodied AI.</h1>
+                    <p class="eyebrow">Multi-Agent Systems / LLM Planning / Human-AI Collaboration</p>
+                    <h1>Planning, reasoning, and coordination for embodied AI systems.</h1>
                     <p class="subtitle">
-                        B.Eng. candidate focused on collaborative robot task planning, real-time adaptation, and
-                        simulation-to-real robotics systems.
+                        I build robotics and agent-system projects around cooperative task planning, real-time
+                        adaptation, repository governance, and long-horizon LLM-assisted workflows.
                     </p>
+                    <div class="tag-list hero-skills" aria-label="Skills">
+                        <span class="tag">Python</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">ROS</span>
+                        <span class="tag">Gazebo</span>
+                        <span class="tag">RViz</span>
+                        <span class="tag">AI2-THOR</span>
+                        <span class="tag">Reinforcement Learning</span>
+                        <span class="tag">LLM Integration</span>
+                        <span class="tag">OpenAI API</span>
+                        <span class="tag">LaTeX</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">Linux</span>
+                    </div>
                     <div class="actions" aria-label="Contact links">
                         <a class="button primary" href="mailto:2300011193@stu.pku.edu.cn">Email</a>
                         <a class="button" href="https://github.com/1LCY007" target="_blank" rel="noopener">GitHub</a>
-                        <a class="button" href="#projects">Projects &amp; Demos</a>
+                        <a class="button" href="#projects">Projects</a>
                         <a class="button" href="ChunyangLuo_CV.pdf" target="_blank" rel="noopener">Open PDF</a>
-                    </div>
-                    <div class="meta-row">
-                        <span class="pill">Expected Graduation: June 2027</span>
-                        <span class="pill">GPA: 3.53 / 4.0</span>
-                        <span class="pill">CET-6: 578</span>
-                        <span class="pill">IELTS: 7.0 (expired)</span>
                     </div>
                 </div>
                 <aside class="portrait-wrap" aria-label="Portrait">
@@ -657,322 +714,290 @@
                         <img src="Curriculum%20Vitae/you.jpg" alt="Portrait of Chunyang Luo" />
                     </div>
                     <p class="portrait-caption">
-                        Research interests: multi-agent task planning, large language models, embodied intelligence.
+                        Focus areas: multi-agent systems, LLM-based planning and reasoning, embodied intelligence.
                     </p>
                 </aside>
             </div>
         </section>
 
-        <section aria-labelledby="snapshot-title">
+        <section id="projects" aria-labelledby="projects-title">
             <div class="shell">
                 <div class="section-head">
-                    <h2 id="snapshot-title">Profile Snapshot</h2>
+                    <h2 id="projects-title">Projects</h2>
                     <p class="section-note">
-                        Current undergraduate profile extracted from the CV source in this repository.
-                    </p>
-                </div>
-                <div class="grid three">
-                    <article class="card metric">
-                        <strong>Peking University</strong>
-                        <span>B.Eng. Candidate in Robotics Engineering</span>
-                    </article>
-                    <article class="card metric">
-                        <strong>26%</strong>
-                        <span>Current class rank, with 85 / 100 average score</span>
-                    </article>
-                    <article class="card metric">
-                        <strong>3 active projects</strong>
-                        <span>Collaborative LTL planning, LLM open-world planning, and RepoFlow agent handoff tools</span>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="soft" id="projects" aria-labelledby="projects-title">
-            <div class="shell">
-                <div class="section-head">
-                    <h2 id="projects-title">Project Highlights</h2>
-                    <p class="section-note">
-                        Selected work spanning embodied planning, multi-agent robot collaboration, and coding-agent
-                        workflow research.
+                        Three current projects in collaborative robot planning, open-world embodied task planning, and
+                        AI coding-agent repository governance.
                     </p>
                 </div>
 
-                <article class="project-feature" aria-labelledby="repoflow-title">
-                    <div>
-                        <p class="eyebrow">Agent Systems / RepoFlow</p>
-                        <h3 id="repoflow-title">RepoFlow: repo-local coordination for sequential coding agents</h3>
-                        <p class="muted">
-                            RepoFlow is an experimental agent project developed from the BoardFlowBench repository. It
-                            studies how coding agents can pass work across turns through repository-local shared state,
-                            structured task boards, handoff records, scope rules, and automated code-health checks.
-                        </p>
-                        <div class="tag-list">
-                            <span class="tag">Coding Agents</span>
-                            <span class="tag">Repo-local State</span>
-                            <span class="tag">Agent Handoff</span>
-                            <span class="tag">Benchmarking</span>
-                            <span class="tag">Code Health Review</span>
-                            <span class="tag">Python</span>
-                        </div>
-                    </div>
-                    <ul class="feature-list" aria-label="RepoFlow feature list">
-                        <li>
-                            <strong>Agent Bridge</strong>
-                            Maintains task boards, handoff JSON records, review notes, and shared context for the next
-                            agent.
-                        </li>
-                        <li>
-                            <strong>Code Health Review</strong>
-                            Detects patch-like naming, duplicate helper patterns, suspicious files, wrapper functions,
-                            and other AI-generated code risks.
-                        </li>
-                        <li>
-                            <strong>Benchmark Checks</strong>
-                            Scores task completion, scope control, handoff completeness, repository hygiene, and board
-                            consistency.
-                        </li>
-                    </ul>
-                </article>
-
-                <div class="subsection-head">
-                    <h3>RepoFlow Demo Placeholders</h3>
-                    <p>Reserved slots for future recordings or interactive embeds from the RepoFlow workflow.</p>
-                </div>
-                <div class="grid two">
-                    <article class="placeholder-card">
-                        <span class="placeholder-label">Demo Slot 01</span>
-                        <span class="placeholder-title">Agent handoff board walkthrough</span>
-                        <p class="placeholder-note">
-                            Reserved for a demo showing task status updates, allowed paths, and structured handoff
-                            records.
-                        </p>
-                    </article>
-                    <article class="placeholder-card">
-                        <span class="placeholder-label">Demo Slot 02</span>
-                        <span class="placeholder-title">Code health review and benchmark scoring</span>
-                        <p class="placeholder-note">
-                            Reserved for a demo showing smell reports, learned repo policies, and benchmark checks.
-                        </p>
-                    </article>
+                <div class="project-index" aria-label="Project index">
+                    <a class="project-link" href="#project-ltl">
+                        <span class="period">Project 01</span>
+                        <h3>Collaborative LTL Task Planning</h3>
+                        <p>Continuous planning and real-time adaptation for heterogeneous robot teams.</p>
+                    </a>
+                    <a class="project-link" href="#project-ai2thor">
+                        <span class="period">Project 02</span>
+                        <h3>LLM-based Multi-robot Planning</h3>
+                        <p>Open-world cooperative task planning with AI2-THOR simulation demos.</p>
+                    </a>
+                    <a class="project-link" href="#project-repoflow">
+                        <span class="period">Project 03</span>
+                        <h3>RepoFlow for AI Coding Agents</h3>
+                        <p>Repository governance, agent handoff, style learning, and code health review.</p>
+                    </a>
                 </div>
 
-                <div class="subsection-head">
-                    <h3>RepoFlow Image Showcase</h3>
-                    <p>Reserved image positions for architecture diagrams, terminal screenshots, and report outputs.</p>
-                </div>
-                <div class="grid three">
-                    <article class="placeholder-card wide">
-                        <span class="placeholder-label">Image 01</span>
-                        <span class="placeholder-title">Architecture diagram</span>
-                        <p class="placeholder-note">Repo-local board, handoff, and benchmark layers.</p>
-                    </article>
-                    <article class="placeholder-card wide">
-                        <span class="placeholder-label">Image 02</span>
-                        <span class="placeholder-title">Workflow screenshot</span>
-                        <p class="placeholder-note">Agent Bridge task state and handoff evidence.</p>
-                    </article>
-                    <article class="placeholder-card wide">
-                        <span class="placeholder-label">Image 03</span>
-                        <span class="placeholder-title">Report output</span>
-                        <p class="placeholder-note">Code-health review or benchmark result snapshot.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="demos" aria-labelledby="demos-title">
-            <div class="shell">
-                <div class="section-head">
-                    <h2 id="demos-title">AI2-THOR Planning Demos</h2>
-                    <p class="section-note">
-                        Small simulation clips from the large-model task planning project, showing embodied evaluation
-                        from robot and top-down perspectives.
-                    </p>
-                </div>
-                <div class="media-grid">
-                    <article class="media-card">
-                        <div class="video-frame">
-                            <video controls preload="metadata" playsinline>
-                                <source src="demo/robot_1.mp4" type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="media-body">
-                            <h3>Robot-view simulation</h3>
-                            <p>AI2-THOR embodied task planning demo from the agent's local observation perspective.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="video-frame">
-                            <video controls preload="metadata" playsinline>
-                                <source src="demo/top_view.mp4" type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="media-body">
-                            <h3>Top-view simulation</h3>
-                            <p>Bird's-eye view for inspecting task allocation, motion, and environment-level behavior.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="soft" id="cv-pdf" aria-labelledby="cv-pdf-title">
-            <div class="shell">
-                <div class="section-head">
-                    <h2 id="cv-pdf-title">CV PDF</h2>
-                    <p class="section-note">
-                        Embedded preview of the full PDF version. Use the browser controls to zoom or open it in a new
-                        tab.
-                    </p>
-                </div>
-                <div class="pdf-viewer">
-                    <iframe src="ChunyangLuo_CV.pdf#view=FitH" title="Chunyang Luo CV PDF">
-                        <a href="ChunyangLuo_CV.pdf">Open Chunyang Luo CV PDF</a>
-                    </iframe>
-                </div>
-            </div>
-        </section>
-
-        <section id="research" aria-labelledby="research-title">
-            <div class="shell">
-                <div class="section-head">
-                    <h2 id="research-title">Research Experience</h2>
-                    <p class="section-note">
-                        Work centered on robot collaboration, task decomposition, and adaptive planning.
-                    </p>
-                </div>
-                <div class="timeline">
-                    <article class="timeline-item">
-                        <div class="period">Jul. 2025 - Present</div>
+                <article class="project-detail" id="project-ltl" aria-labelledby="ltl-title">
+                    <div class="project-feature">
                         <div>
-                            <h3>Continuous Planning &amp; Real-time Adaptation for Collaborative LTL Tasks</h3>
-                            <ul class="clean">
-                                <li>Built a multi-heterogeneous robot simulation platform with Unitree Go2 and Scout in
-                                    Gazebo.</li>
-                                <li>Validated algorithm robustness through kinematics comparisons.</li>
-                                <li>Designed a real-time adaptive strategy for LTL task decomposition and began transfer
-                                    to physical robot experiments.</li>
-                            </ul>
+                            <p class="eyebrow">Jul. 2025 - Present / Multi-robot Planning</p>
+                            <h3 id="ltl-title">Continuous Planning &amp; Real-time Adaptation for Collaborative LTL Tasks</h3>
+                            <p class="muted">
+                                This project studies how heterogeneous robot teams can decompose and execute temporal
+                                logic tasks while adapting to changes during execution.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">LTL Task Decomposition</span>
+                                <span class="tag">Multi-robot Collaboration</span>
+                                <span class="tag">Gazebo</span>
+                                <span class="tag">Unitree Go2</span>
+                                <span class="tag">Scout</span>
+                                <span class="tag">Real-time Adaptation</span>
+                            </div>
                         </div>
-                    </article>
-                    <article class="timeline-item">
-                        <div class="period">Jan. 2026 - Present</div>
-                        <div>
-                            <h3>LLM-based Multi-robot Cooperative Task Planning in Open Worlds</h3>
-                            <ul class="clean">
-                                <li>Completed literature review and offline planning code for cooperative task
-                                    planning.</li>
-                                <li>Integrated AI2-THOR simulation to evaluate task allocation behavior.</li>
-                                <li>Developed an online replanning module using LLM reasoning for changing
-                                    environments.</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="education" aria-labelledby="education-title">
-            <div class="shell">
-                <div class="section-head">
-                    <h2 id="education-title">Education</h2>
-                    <p class="section-note">Robotics engineering coursework with quantitative and machine learning
-                        foundations.</p>
-                </div>
-                <article class="card">
-                    <div class="period">2023 - Present</div>
-                    <h3>B.Eng. Candidate in Robotics Engineering, Peking University</h3>
-                    <p class="muted">Expected Graduation: June 2027 / GPA: 3.53 / 4.0 / 85 / 100 / Rank: 26%</p>
-                    <div class="course-grid" aria-label="Core courses">
-                        <div class="course">Probability and Statistics - 94</div>
-                        <div class="course">Foundations of Machine Learning - 98</div>
-                        <div class="course">Engineering Optimization Design - 88</div>
-                        <div class="course">Analog Electronic Technology - 89</div>
-                        <div class="course">Advanced Dynamics - 87</div>
-                        <div class="course">Robotics Lab I - 89</div>
-                        <div class="course">Mechanical Design Basics - 89.7</div>
-                        <div class="course">Introduction to Robotics - 89</div>
-                        <div class="course">Linear Algebra - 87</div>
-                        <div class="course">Mathematical Analysis I - 86</div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="soft" id="skills" aria-labelledby="skills-title">
-            <div class="shell">
-                <div class="section-head">
-                    <h2 id="skills-title">Skills &amp; Awards</h2>
-                    <p class="section-note">Technical stack and competition experience from the CV.</p>
-                </div>
-                <div class="grid two">
-                    <article class="card">
-                        <h3>Technical Skills</h3>
-                        <div class="tag-list">
-                            <span class="tag">Python</span>
-                            <span class="tag">MATLAB</span>
-                            <span class="tag">ROS / ROS2</span>
-                            <span class="tag">Gazebo</span>
-                            <span class="tag">RViz</span>
-                            <span class="tag">AI2-THOR</span>
-                            <span class="tag">Reinforcement Learning Basics</span>
-                            <span class="tag">OpenAI API</span>
-                            <span class="tag">LaTeX</span>
-                            <span class="tag">Git</span>
-                            <span class="tag">Linux</span>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <h3>Awards &amp; Competitions</h3>
-                        <ul class="clean">
-                            <li>Second Prize, 22nd Jiang Zehan Cup Mathematical Contest, Peking University.</li>
-                            <li>Honorable Mention, MCM/ICM 2026.</li>
-                            <li>Multiple mathematical modeling contest participations with strong quantitative
-                                problem-solving experience.</li>
+                        <ul class="feature-list" aria-label="LTL project details">
+                            <li>
+                                <strong>Simulation platform</strong>
+                                Built a multi-heterogeneous robot simulation platform with Unitree Go2 and Scout in
+                                Gazebo.
+                            </li>
+                            <li>
+                                <strong>Algorithm validation</strong>
+                                Validated robustness through kinematics comparisons and simulation experiments.
+                            </li>
+                            <li>
+                                <strong>Real-world transfer</strong>
+                                Designed a real-time adaptive strategy for LTL task decomposition and started transfer
+                                to physical robot experiments.
+                            </li>
                         </ul>
-                    </article>
-                </div>
+                    </div>
+                    <div class="demo-block">
+                        <div class="grid two">
+                            <article class="placeholder-card">
+                                <span class="placeholder-label">Demo Slot</span>
+                                <span class="placeholder-title">Gazebo heterogeneous robot simulation</span>
+                                <p class="placeholder-note">
+                                    Reserved for future footage of collaborative LTL task execution in simulation.
+                                </p>
+                            </article>
+                            <article class="placeholder-card">
+                                <span class="placeholder-label">Image Slot</span>
+                                <span class="placeholder-title">Task decomposition or robot-team diagram</span>
+                                <p class="placeholder-note">
+                                    Reserved for a planning graph, system architecture, or physical experiment image.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-detail" id="project-ai2thor" aria-labelledby="ai2thor-title">
+                    <div class="project-feature">
+                        <div>
+                            <p class="eyebrow">Jan. 2026 - Present / Embodied AI</p>
+                            <h3 id="ai2thor-title">LLM-based Multi-robot Cooperative Task Planning in Open Worlds</h3>
+                            <p class="muted">
+                                This project uses large language model reasoning for cooperative robot task planning in
+                                changing open-world environments, with AI2-THOR used as the evaluation simulator.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">LLM Reasoning</span>
+                                <span class="tag">Online Replanning</span>
+                                <span class="tag">Task Allocation</span>
+                                <span class="tag">AI2-THOR</span>
+                                <span class="tag">Open-world Planning</span>
+                            </div>
+                        </div>
+                        <ul class="feature-list" aria-label="AI2-THOR project details">
+                            <li>
+                                <strong>Planning pipeline</strong>
+                                Completed literature review and offline planning code for cooperative multi-robot task
+                                planning.
+                            </li>
+                            <li>
+                                <strong>Simulation evaluation</strong>
+                                Integrated AI2-THOR simulation to test task allocation behavior and embodied execution.
+                            </li>
+                            <li>
+                                <strong>Adaptive reasoning</strong>
+                                Developed an online replanning module using LLM reasoning to handle environmental
+                                changes.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="demo-block">
+                        <div class="media-grid">
+                            <article class="media-card">
+                                <div class="video-frame">
+                                    <video controls preload="metadata" playsinline>
+                                        <source src="demo/robot_1.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="media-body">
+                                    <h3>Robot-view AI2-THOR demo</h3>
+                                    <p>Local embodied observation perspective from the task planning simulation.</p>
+                                </div>
+                            </article>
+                            <article class="media-card">
+                                <div class="video-frame">
+                                    <video controls preload="metadata" playsinline>
+                                        <source src="demo/top_view.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="media-body">
+                                    <h3>Top-view AI2-THOR demo</h3>
+                                    <p>Bird's-eye view for inspecting allocation, navigation, and environment behavior.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-detail" id="project-repoflow" aria-labelledby="repoflow-title">
+                    <div class="project-feature">
+                        <div>
+                            <p class="eyebrow">May. 2025 - Present / Agent Systems</p>
+                            <h3 id="repoflow-title">RepoFlow: Repository Governance for AI Coding Agents</h3>
+                            <p class="muted">
+                                RepoFlow is a skill-based repository governance framework for LLM coding agents such as
+                                Claude Code and Codex. It focuses on preserving repository structure, style consistency,
+                                and handoff quality during long-term agent-assisted development.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">Coding Agents</span>
+                                <span class="tag">Claude Code</span>
+                                <span class="tag">Codex</span>
+                                <span class="tag">Agent Handoff</span>
+                                <span class="tag">Style Learning</span>
+                                <span class="tag">Code Health Review</span>
+                                <span class="tag">Repository Scaffold</span>
+                            </div>
+                        </div>
+                        <ul class="feature-list" aria-label="RepoFlow project details">
+                            <li>
+                                <strong>Repository governance framework</strong>
+                                Designed and implemented a skill-based framework that encodes project structure, coding
+                                conventions, and review policies.
+                            </li>
+                            <li>
+                                <strong>Agent handoff and style learning</strong>
+                                Developed mechanisms for structured handoff, shared context, and repo-local style
+                                learning to reduce drift across agent turns.
+                            </li>
+                            <li>
+                                <strong>Code health review</strong>
+                                Built review logic for detecting patch-like naming, duplicate helpers, wrapper
+                                functions, suspicious files, and repository degradation.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="demo-block">
+                        <div class="grid two">
+                            <article class="placeholder-card">
+                                <span class="placeholder-label">Demo Slot 01</span>
+                                <span class="placeholder-title">Agent handoff board walkthrough</span>
+                                <p class="placeholder-note">
+                                    Reserved for a demo showing task status updates, allowed paths, and structured
+                                    handoff records.
+                                </p>
+                            </article>
+                            <article class="placeholder-card">
+                                <span class="placeholder-label">Demo Slot 02</span>
+                                <span class="placeholder-title">Code health review and benchmark scoring</span>
+                                <p class="placeholder-note">
+                                    Reserved for a demo showing smell reports, learned repo policies, and benchmark
+                                    checks.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="demo-block">
+                        <div class="grid three">
+                            <article class="placeholder-card wide">
+                                <span class="placeholder-label">Image 01</span>
+                                <span class="placeholder-title">Architecture diagram</span>
+                                <p class="placeholder-note">Repo-local board, handoff, and benchmark layers.</p>
+                            </article>
+                            <article class="placeholder-card wide">
+                                <span class="placeholder-label">Image 02</span>
+                                <span class="placeholder-title">Workflow screenshot</span>
+                                <p class="placeholder-note">Agent Bridge task state and handoff evidence.</p>
+                            </article>
+                            <article class="placeholder-card wide">
+                                <span class="placeholder-label">Image 03</span>
+                                <span class="placeholder-title">Report output</span>
+                                <p class="placeholder-note">Code-health review or benchmark result snapshot.</p>
+                            </article>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section id="experience" aria-labelledby="experience-title">
+        <section class="soft" id="training" aria-labelledby="training-title">
             <div class="shell">
                 <div class="section-head">
-                    <h2 id="experience-title">Training &amp; Campus Experience</h2>
-                    <p class="section-note">Applied robotics training, student service, and extracurricular work.</p>
+                    <h2 id="training-title">Professional Training</h2>
+                    <p class="section-note">Applied robotics and embodied AI training experience.</p>
                 </div>
                 <div class="grid two">
                     <article class="card">
                         <div class="period">Spring 2026</div>
                         <h3>Xbotics Online Internship</h3>
                         <p class="muted">
-                            Learned the Motrixlab simulation platform, implemented basic reinforcement learning
-                            algorithms for robot navigation, and gained hands-on experience with Sim-to-Real transfer
+                            Learned the Motrixlab simulation platform and implemented basic reinforcement learning
+                            algorithms for robot navigation. Gained hands-on experience with Sim-to-Real transfer
                             pipelines.
                         </p>
                     </article>
                     <article class="card">
                         <div class="period">2026</div>
-                        <h3>Alibaba DAMO Academy Embodied Intelligence Bootcamp</h3>
+                        <h3>Alibaba DAMO Academy - Embodied Intelligence Bootcamp</h3>
                         <p class="muted">
-                            Completed intensive embodied AI training and built a visual navigation demo using a robotic
-                            arm, strengthening practical skills in robot perception and control.
+                            Participated in intensive embodied AI training and completed a visual navigation demo using
+                            a robotic arm, strengthening practical skills in robot perception and control.
                         </p>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards" aria-labelledby="awards-title">
+            <div class="shell">
+                <div class="section-head">
+                    <h2 id="awards-title">Awards</h2>
+                    <p class="section-note">Competition experience in mathematics and modeling.</p>
+                </div>
+                <div class="grid three">
                     <article class="card">
-                        <div class="period">Current</div>
-                        <h3>Student Assistant</h3>
-                        <p class="muted">School of Advanced Manufacturing &amp; Robotics, Peking University.</p>
+                        <div class="period">Mathematics Contest</div>
+                        <h3>Jiang Zehan Cup Mathematical Contest</h3>
+                        <p class="muted">Second Prize in the 22nd Jiang Zehan Cup Mathematical Contest.</p>
                     </article>
                     <article class="card">
-                        <div class="period">Campus Service</div>
-                        <h3>College of Engineering</h3>
+                        <div class="period">2026</div>
+                        <h3>MCM/ICM</h3>
+                        <p class="muted">Honorable Mention in the Mathematical Contest in Modeling.</p>
+                    </article>
+                    <article class="card">
+                        <div class="period">Modeling</div>
+                        <h3>Mathematical Modeling Contests</h3>
                         <p class="muted">
-                            Member of the Study Department, Party Building Working Committee; one-year service in the
-                            Organization Department, Youth League Committee.
+                            Multiple contest participations with strong quantitative and problem-solving practice.
                         </p>
                     </article>
                 </div>
