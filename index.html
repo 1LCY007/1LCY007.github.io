@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chunyang Luo | Project Portfolio</title>
+    <title>Chunyang Luo | Robotics &amp; Human-AI Interaction</title>
     <meta name="description"
-        content="Chunyang Luo. Project portfolio in multi-agent systems, LLM-based planning and reasoning, embodied AI, and human-AI collaboration." />
-    <link rel="icon" href="favicon.ico" />
+        content="Chunyang Luo, Robotics Engineering undergraduate at Peking University. Research in agent systems, human-AI interaction, LLM-based planning and reasoning, and multi-robot planning." />
     <style>
         :root {
             --ink: #172033;
@@ -230,6 +229,7 @@
 
         section {
             padding: 56px 0;
+            scroll-margin-top: 110px;
         }
 
         section.soft {
@@ -339,41 +339,6 @@
         .hero-skills {
             max-width: 760px;
             margin: 0 0 28px;
-        }
-
-        .project-index {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
-            margin-bottom: 34px;
-        }
-
-        .project-link {
-            display: block;
-            min-height: 100%;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: var(--paper);
-            padding: 20px;
-            color: var(--ink);
-            box-shadow: 0 9px 24px rgba(23, 32, 51, 0.05);
-        }
-
-        .project-link:hover {
-            text-decoration: none;
-            transform: translateY(-1px);
-        }
-
-        .project-link h3 {
-            margin: 6px 0 8px;
-            font-size: 1.08rem;
-            line-height: 1.28;
-        }
-
-        .project-link p {
-            margin-bottom: 0;
-            color: var(--muted);
-            font-size: 0.94rem;
         }
 
         .project-detail {
@@ -712,7 +677,6 @@
             .grid.three,
             .course-grid,
             .project-feature,
-            .project-index,
             .evidence-grid,
             .media-grid {
                 grid-template-columns: 1fr;
@@ -761,8 +725,9 @@
                 <span>Chunyang Luo</span>
             </a>
             <nav class="nav-links" aria-label="Primary navigation">
-                <a href="#projects">Projects</a>
-                <a href="#training">Training</a>
+                <a href="#publications">Publications</a>
+                <a href="#projects">Research</a>
+                <a href="#course-projects">Course Projects</a>
                 <a href="#awards">Awards</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -773,11 +738,18 @@
         <section class="hero">
             <div class="shell hero-grid">
                 <div>
-                    <p class="eyebrow">Multi-Agent Systems / LLM Planning / Human-AI Collaboration</p>
-                    <h1>Planning, reasoning, and coordination for embodied AI systems.</h1>
+                    <p class="eyebrow">Peking University / Robotics Engineering</p>
+                    <h1>Chunyang Luo</h1>
                     <p class="subtitle">
-                        I build robotics and agent-system projects around cooperative task planning, real-time
-                        adaptation, repository governance, and long-horizon LLM-assisted workflows.
+                        I am a B.Eng. candidate in Robotics Engineering at Peking University, expecting to graduate
+                        in June 2027. My research interests span agent systems, human-AI interaction, LLM-based
+                        planning and reasoning, and multi-robot planning.
+                    </p>
+                    <p class="muted">
+                        I work on developer-agent memory co-management through MemoSync and open-world robot
+                        planning through OpenGRAIL. In summer 2026, I conducted research on human-AI collaboration
+                        at HKUST under the supervision of Prof. Xiaojuan Ma. My multi-robot planning research is
+                        supervised by Prof. Zhongkui Li.
                     </p>
                     <div class="tag-list hero-skills" aria-label="Skills">
                         <span class="tag">Python</span>
@@ -796,7 +768,7 @@
                     <div class="actions" aria-label="Contact links">
                         <a class="button primary" href="mailto:2300011193@stu.pku.edu.cn">Email</a>
                         <a class="button" href="https://github.com/1LCY007" target="_blank" rel="noopener">GitHub</a>
-                        <a class="button" href="#projects">Projects</a>
+                        <a class="button" href="#projects">Research</a>
                         <a class="button" href="ChunyangLuo_CV.pdf" target="_blank" rel="noopener">CV</a>
                     </div>
                 </div>
@@ -805,117 +777,151 @@
                         <img src="Curriculum%20Vitae/you.jpg" alt="Portrait of Chunyang Luo" />
                     </div>
                     <p class="portrait-caption">
-                        Focus areas: multi-agent systems, LLM-based planning and reasoning, embodied intelligence.
+                        Robotics Engineering, Peking University<br />
+                        Agent systems &amp; human-AI interaction
                     </p>
                 </aside>
             </div>
         </section>
 
-        <section id="projects" aria-labelledby="projects-title">
+        <section class="soft" id="education" aria-labelledby="education-title">
             <div class="shell">
                 <div class="section-head">
-                    <h2 id="projects-title">Projects</h2>
+                    <h2 id="education-title">Education</h2>
+                    <p class="section-note">2023 &ndash; Present &middot; Expected graduation: June 2027</p>
+                </div>
+                <article class="card">
+                    <h3>Peking University</h3>
+                    <p class="muted">B.Eng. Candidate in Robotics Engineering</p>
+                    <div class="meta-row">
+                        <span class="pill">GPA: 3.526 / 4.0 (85 / 100)</span>
+                        <span class="pill">Rank: 5 / 19 (Top 26%)</span>
+                        <span class="pill">IELTS: 7.0</span>
+                        <span class="pill">CET-6: 578</span>
+                    </div>
+                    <div class="tag-list" aria-label="Selected core courses">
+                        <span class="tag">Foundations of Machine Learning: 98</span>
+                        <span class="tag">Probability and Statistics: 94</span>
+                        <span class="tag">Introduction to Robotics: 89</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="publications" aria-labelledby="publications-title">
+            <div class="shell">
+                <div class="section-head">
+                    <h2 id="publications-title">Publications</h2>
+                </div>
+                <article class="card">
+                    <h3>MemoSync: Co-Managing Developer-Agent Metamemory Across Contexts</h3>
+                    <p class="muted">
+                        Baiqiao Zhang, Junze Li, <strong>Chunyang Luo</strong>, Yuying Tang, Wenshuo Zhang,
+                        Shiyuan Piao, Dingdong Liu, Shuai Ma, and Xiaojuan Ma.
+                    </p>
+                    <p class="status-note">Submitted to ACM CHI 2027.</p>
+                    <div class="project-actions">
+                        <a class="button" href="#project-memosync">Project Overview</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="soft" id="projects" aria-labelledby="projects-title">
+            <div class="shell">
+                <div class="section-head">
+                    <h2 id="projects-title">Research Experience</h2>
                     <p class="section-note">
-                        Three current projects in collaborative robot planning, open-world embodied task planning, and
-                        AI coding-agent repository governance.
+                        Memory co-management for human-AI collaboration and scalable planning for heterogeneous
+                        robot teams.
                     </p>
                 </div>
 
-                <div class="project-index" aria-label="Project index">
-                    <a class="project-link" href="#project-ltl">
-                        <span class="period">Project 01</span>
-                        <h3>Collaborative LTL Task Planning</h3>
-                        <p>Continuous planning and real-time adaptation for heterogeneous robot teams.</p>
-                    </a>
-                    <a class="project-link" href="#project-opengrail">
-                        <span class="period">Project 02</span>
-                        <h3>OpenGRAIL</h3>
-                        <p>Scalable open-world planning through grouped reasoning and inter-LLM coordination.</p>
-                    </a>
-                    <a class="project-link" href="#project-repoflow">
-                        <span class="period">Project 03</span>
-                        <h3>RepoFlow for AI Coding Agents</h3>
-                        <p>Repository governance, agent handoff, style learning, and code health review.</p>
-                    </a>
-                </div>
-
-                <article class="project-detail" id="project-ltl" aria-labelledby="ltl-title">
+                <article class="project-detail" id="project-memosync" aria-labelledby="memosync-title">
                     <div class="project-feature">
                         <div>
-                            <p class="eyebrow">Jul. 2025 - Present / Multi-robot Planning</p>
-                            <h3 id="ltl-title">Continuous Planning &amp; Real-time Adaptation for Collaborative LTL Tasks</h3>
+                            <p class="eyebrow">Jul. 2026 &ndash; Sept. 2026 / Summer Research, HKUST</p>
+                            <h3 id="memosync-title">MemoSync: Co-Managing Developer-Agent Metamemory Across Contexts</h3>
+                            <p class="muted">Supervisor: Prof. Xiaojuan Ma</p>
                             <p class="muted">
-                                This project studies how heterogeneous robot teams can decompose and execute temporal
-                                logic tasks while adapting to changes during execution.
+                                MemoSync turns an AI coding agent's memory into a shared representation that developers
+                                can inspect and control. The agent proposes reusable memories, while the developer
+                                reviews, edits, and assigns them to Personal, Project, or Session scopes to preserve
+                                intent across long-horizon collaboration.
                             </p>
                             <div class="tag-list">
-                                <span class="tag">LTL Task Decomposition</span>
-                                <span class="tag">Multi-robot Collaboration</span>
-                                <span class="tag">Gazebo</span>
-                                <span class="tag">Unitree Go2</span>
-                                <span class="tag">Scout</span>
-                                <span class="tag">Real-time Adaptation</span>
-                            </div>
-                            <div class="project-actions">
-                                <a class="button" href="https://github.com/1LCY007/gazebo_simulation.git"
-                                    target="_blank" rel="noopener">View Gazebo Simulation on GitHub</a>
+                                <span class="tag">Human-AI Interaction</span>
+                                <span class="tag">Agent Memory</span>
+                                <span class="tag">Memory Co-Management</span>
+                                <span class="tag">Coding Agents</span>
                             </div>
                         </div>
-                        <ul class="feature-list" aria-label="LTL project details">
+                        <ul class="feature-list" aria-label="My work on MemoSync">
                             <li>
-                                <strong>Simulation platform</strong>
-                                Built a multi-heterogeneous robot simulation platform with Unitree Go2 and Scout in
-                                Gazebo.
+                                <strong>Interactive memory extraction</strong>
+                                Designed a system that extracts and modularizes reusable memories from ongoing
+                                human-AI conversations.
                             </li>
                             <li>
-                                <strong>Algorithm validation</strong>
-                                Validated robustness through kinematics comparisons and simulation experiments.
+                                <strong>Structured memory organization</strong>
+                                Developed mechanisms to organize memory modules by scope, type, lifecycle, and
+                                relationships between memories.
                             </li>
                             <li>
-                                <strong>Real-world transfer</strong>
-                                Designed a real-time adaptive strategy for LTL task decomposition and started transfer
-                                to physical robot experiments.
+                                <strong>Task-aware retrieval and scheduling</strong>
+                                Designed memory retrieval and scheduling to supply relevant context for downstream
+                                agent execution and preserve user intent across interactions.
                             </li>
                         </ul>
                     </div>
+                    <figure class="project-figure">
+                        <img src="demo/MemoSync/interface.png" width="7760" height="4384" loading="lazy"
+                            alt="MemoSync interface showing long-term memory review, working memory, inline memory citations, a memory-use audit, and a session memory record" />
+                        <figcaption>
+                            MemoSync's shared memory interface: review proposed memories, select context for each turn,
+                            trace memory use, and inspect the session's Memory Record.
+                        </figcaption>
+                    </figure>
                 </article>
 
                 <article class="project-detail" id="project-opengrail" aria-labelledby="opengrail-title">
                     <div class="project-feature">
                         <div>
                             <p class="eyebrow">Sept. 2025 - Present</p>
-                            <h3 id="opengrail-title">OpenGRAIL: Scalable Open-World Multi-Robot Planning via Grouped
-                                Reasoning, Allocation, and Inter-LLM Coordination</h3>
+                            <h3 id="opengrail-title">OpenGRAIL: Open-World Task Grouping and Robot Allocation with
+                                Integrated LLM Planning</h3>
+                            <p class="muted">Supervisor: Prof. Zhongkui Li</p>
                             <p class="muted">
-                                OpenGRAIL develops a scalable planning architecture that groups robots and tasks,
-                                coordinates specialized LLM reasoning, and triggers local-to-global recovery when the
-                                environment changes. AI2-THOR is used for simulation and task-allocation evaluation.
+                                OpenGRAIL combines LLM-based hierarchical task planning with optimization-based robot
+                                allocation. It turns natural-language instructions, environment context, and robot
+                                capabilities into dependency-aware task groups and integrates their solutions into
+                                globally executable plans for large-scale, long-horizon tasks.
                             </p>
-                            <p class="status-note">Currently under development.</p>
+                            <p class="status-note">Manuscript in preparation for ICRA 2027.</p>
                             <div class="tag-list">
-                                <span class="tag">Grouped Reasoning</span>
+                                <span class="tag">LLM-Based Planning</span>
+                                <span class="tag">Task Grouping</span>
                                 <span class="tag">Robot Allocation</span>
-                                <span class="tag">Inter-LLM Coordination</span>
-                                <span class="tag">Dynamic Recovery</span>
+                                <span class="tag">MILP Scheduling</span>
                                 <span class="tag">AI2-THOR</span>
                                 <span class="tag">Open-world Planning</span>
                             </div>
                         </div>
                         <ul class="feature-list" aria-label="OpenGRAIL project details">
                             <li>
-                                <strong>Manager layer</strong>
-                                Interprets natural-language tasks, groups robots, and maintains global environment and
-                                task state.
+                                <strong>Dependency-aware task grouping</strong>
+                                Developed an LLM-based hierarchical planner that interprets instructions, environment
+                                context, and robot capabilities to generate coordinated task groups.
                             </li>
                             <li>
-                                <strong>Group and planner layers</strong>
-                                Uses group-level reasoning, hierarchical task generation, motion planning, and
-                                plan-to-code execution.
+                                <strong>Constrained allocation and scheduling</strong>
+                                Formulated heterogeneous robot allocation within each group as a mixed-integer linear
+                                program under capability, temporal, spatial, and collaboration constraints.
                             </li>
                             <li>
-                                <strong>Multi-level recovery</strong>
-                                Coordinates local LLM, group chat, planner-level, and manager-level recovery for
-                                dynamic environments.
+                                <strong>Globally executable plans</strong>
+                                Integrated group-level solutions to reduce planning time and improve planning accuracy
+                                at scale.
                             </li>
                         </ul>
                     </div>
@@ -957,15 +963,41 @@
                     </div>
                 </article>
 
+                <article class="project-detail card" id="project-ltl" aria-labelledby="ltl-title">
+                    <p class="eyebrow">Additional Research / Jul. 2025 &ndash; Present</p>
+                    <h3 id="ltl-title">Multi-Robot Collaborative LTL Continuous Planning for Dynamic Environments</h3>
+                    <p class="muted">Supervisor: Prof. Zhongkui Li</p>
+                    <p class="muted">
+                        I designed an online task decomposition and replanning framework for heterogeneous robot
+                        teams executing linear temporal logic (LTL) tasks under dynamic events. I built a Gazebo
+                        simulation platform with Unitree Go2 and Scout, including task execution and state feedback
+                        interfaces, and benchmarked completion rate, planning time, and cumulative cost against static
+                        and periodic-replanning baselines. The work is currently being extended to physical robots.
+                    </p>
+                    <div class="project-actions">
+                        <a class="button" href="https://github.com/1LCY007/gazebo_simulation.git" target="_blank"
+                            rel="noopener">Gazebo Simulation on GitHub</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="course-projects" aria-labelledby="course-projects-title">
+            <div class="shell">
+                <div class="section-head">
+                    <h2 id="course-projects-title">Course Projects</h2>
+                    <p class="section-note">Project work at Peking University on continuity in AI-assisted development.</p>
+                </div>
                 <article class="project-detail" id="project-repoflow" aria-labelledby="repoflow-title">
                     <div class="project-feature">
                         <div>
-                            <p class="eyebrow">Mar. 2026 - Present / Agent Systems</p>
-                            <h3 id="repoflow-title">RepoFlow: Repository Workflow for AI Coding Agents</h3>
+                            <p class="eyebrow">Course Project / Peking University</p>
+                            <h3 id="repoflow-title">RepoFlow: Repository-Level Workflow for AI Coding Agents</h3>
                             <p class="muted">
-                                RepoFlow is a skill-based repository governance framework for LLM coding agents such as
-                                Claude Code and Codex. It focuses on preserving repository structure, style consistency,
-                                and handoff quality during long-term agent-assisted development.
+                                RepoFlow is a course project exploring persistent context and structured agent handoff
+                                for long-horizon coding workflows. Its skill-based repository framework helps coding
+                                agents preserve project knowledge, coding conventions, and task continuity across
+                                sessions and agent transitions.
                             </p>
                             <div class="tag-list">
                                 <span class="tag">Coding Agents</span>
@@ -979,6 +1011,8 @@
                             <div class="project-actions">
                                 <a class="button" href="https://github.com/ChenNeuro/BoardFlowBench.git"
                                     target="_blank" rel="noopener">View RepoFlow on GitHub</a>
+                                <a class="button" href="demo/repoflow/RepoFlow%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A.pdf"
+                                    target="_blank" rel="noopener">Course Report (PDF)</a>
                             </div>
                         </div>
                         <ul class="feature-list" aria-label="RepoFlow project details">
@@ -1086,22 +1120,13 @@
                     <h2 id="training-title">Professional Training</h2>
                     <p class="section-note">Applied robotics and embodied AI training experience.</p>
                 </div>
-                <div class="grid two">
-                    <article class="card">
-                        <div class="period">Spring 2026</div>
-                        <h3>Xbotics Online Internship</h3>
-                        <p class="muted">
-                            Learned the Motrixlab simulation platform and implemented basic reinforcement learning
-                            algorithms for robot navigation. Gained hands-on experience with Sim-to-Real transfer
-                            pipelines.
-                        </p>
-                    </article>
+                <div class="grid">
                     <article class="card">
                         <div class="period">Spring 2026</div>
                         <h3>Alibaba DAMO Academy - Embodied Intelligence Bootcamp</h3>
                         <p class="muted">
-                            Participated in intensive embodied AI training and completed a visual navigation demo using
-                            a robotic arm, strengthening practical skills in robot perception and control.
+                            Built a robotic-arm visual-navigation demo integrating perception, control, and task
+                            execution.
                         </p>
                     </article>
                 </div>
@@ -1132,8 +1157,8 @@
             <div class="shell">
                 <div class="section-head">
                     <h2 id="contact-title">Contact</h2>
-                    <p class="section-note">Open to research collaboration in robotics, embodied AI, and multi-agent
-                        planning.</p>
+                    <p class="section-note">Open to research collaboration in agent systems, human-AI interaction,
+                        and multi-robot planning.</p>
                 </div>
                 <div class="grid three">
                     <article class="card">
