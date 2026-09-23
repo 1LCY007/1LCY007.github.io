@@ -295,6 +295,37 @@
             color: var(--muted);
         }
 
+        .role {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 760;
+            vertical-align: middle;
+        }
+
+        .role-lead {
+            color: #ffffff;
+            background: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .role-assist {
+            color: var(--muted);
+            background: #eef1f6;
+            border: 1px solid var(--line);
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+            font-size: 0.88em;
+            padding: 1px 6px;
+            border-radius: 5px;
+            background: var(--soft);
+            color: var(--accent-2);
+        }
+
         .metric {
             display: flex;
             flex-direction: column;
@@ -473,6 +504,10 @@
             padding-left: 14px;
             border-left: 3px solid var(--accent);
             color: var(--muted);
+        }
+
+        .card .feature-list {
+            margin-top: 16px;
         }
 
         .feature-list strong {
@@ -725,6 +760,7 @@
                 <span>Chunyang Luo</span>
             </a>
             <nav class="nav-links" aria-label="Primary navigation">
+                <a href="#education">Education</a>
                 <a href="#publications">Publications</a>
                 <a href="#projects">Research</a>
                 <a href="#course-projects">Course Projects</a>
@@ -794,7 +830,7 @@
                     <h3>Peking University</h3>
                     <p class="muted">B.Eng. Candidate in Robotics Engineering</p>
                     <div class="meta-row">
-                        <span class="pill">GPA: 3.526 / 4.0 (85 / 100)</span>
+                        <span class="pill">GPA: 3.54 / 4.0 (85 / 100)</span>
                         <span class="pill">Rank: 5 / 19 (Top 26%)</span>
                         <span class="pill">IELTS: 7.0</span>
                         <span class="pill">CET-6: 578</span>
@@ -837,67 +873,19 @@
                     </p>
                 </div>
 
-                <article class="project-detail" id="project-memosync" aria-labelledby="memosync-title">
-                    <div class="project-feature">
-                        <div>
-                            <p class="eyebrow">Jul. 2026 &ndash; Sept. 2026 / Summer Research, HKUST</p>
-                            <h3 id="memosync-title">MemoSync: Co-Managing Developer-Agent Metamemory Across Contexts</h3>
-                            <p class="muted">Supervisor: Prof. Xiaojuan Ma</p>
-                            <p class="muted">
-                                MemoSync turns an AI coding agent's memory into a shared representation that developers
-                                can inspect and control. The agent proposes reusable memories, while the developer
-                                reviews, edits, and assigns them to Personal, Project, or Session scopes to preserve
-                                intent across long-horizon collaboration.
-                            </p>
-                            <div class="tag-list">
-                                <span class="tag">Human-AI Interaction</span>
-                                <span class="tag">Agent Memory</span>
-                                <span class="tag">Memory Co-Management</span>
-                                <span class="tag">Coding Agents</span>
-                            </div>
-                        </div>
-                        <ul class="feature-list" aria-label="My work on MemoSync">
-                            <li>
-                                <strong>Interactive memory extraction</strong>
-                                Designed a system that extracts and modularizes reusable memories from ongoing
-                                human-AI conversations.
-                            </li>
-                            <li>
-                                <strong>Structured memory organization</strong>
-                                Developed mechanisms to organize memory modules by scope, type, lifecycle, and
-                                relationships between memories.
-                            </li>
-                            <li>
-                                <strong>Task-aware retrieval and scheduling</strong>
-                                Designed memory retrieval and scheduling to supply relevant context for downstream
-                                agent execution and preserve user intent across interactions.
-                            </li>
-                        </ul>
-                    </div>
-                    <figure class="project-figure">
-                        <img src="demo/MemoSync/interface.png" width="7760" height="4384" loading="lazy"
-                            alt="MemoSync interface showing long-term memory review, working memory, inline memory citations, a memory-use audit, and a session memory record" />
-                        <figcaption>
-                            MemoSync's shared memory interface: review proposed memories, select context for each turn,
-                            trace memory use, and inspect the session's Memory Record.
-                        </figcaption>
-                    </figure>
-                </article>
-
                 <article class="project-detail" id="project-opengrail" aria-labelledby="opengrail-title">
                     <div class="project-feature">
                         <div>
                             <p class="eyebrow">Sept. 2025 - Present</p>
                             <h3 id="opengrail-title">OpenGRAIL: Open-World Task Grouping and Robot Allocation with
                                 Integrated LLM Planning</h3>
-                            <p class="muted">Supervisor: Prof. Zhongkui Li</p>
+                            <p class="muted"><span class="role role-lead">Lead Researcher</span>Supervisor: Prof. Zhongkui Li</p>
                             <p class="muted">
                                 OpenGRAIL combines LLM-based hierarchical task planning with optimization-based robot
                                 allocation. It turns natural-language instructions, environment context, and robot
                                 capabilities into dependency-aware task groups and integrates their solutions into
                                 globally executable plans for large-scale, long-horizon tasks.
                             </p>
-                            <p class="status-note">Manuscript in preparation for ICRA 2027.</p>
                             <div class="tag-list">
                                 <span class="tag">LLM-Based Planning</span>
                                 <span class="tag">Task Grouping</span>
@@ -963,17 +951,74 @@
                     </div>
                 </article>
 
+                <article class="project-detail" id="project-memosync" aria-labelledby="memosync-title">
+                    <div class="project-feature">
+                        <div>
+                            <p class="eyebrow">Jul. 2026 &ndash; Sept. 2026 / Summer Research, HKUST</p>
+                            <h3 id="memosync-title">MemoSync: Co-Managing Developer-Agent Metamemory Across Contexts</h3>
+                            <p class="muted"><span class="role role-assist">Research Assistant</span>Supervisor: Prof. Xiaojuan Ma</p>
+                            <p class="muted">
+                                MemoSync turns an AI coding agent's memory into a shared representation that developers
+                                can inspect and control. The agent proposes reusable memories, while the developer
+                                reviews, edits, and assigns them to Personal, Project, or Session scopes to preserve
+                                intent across long-horizon collaboration.
+                            </p>
+                            <div class="tag-list">
+                                <span class="tag">Human-AI Interaction</span>
+                                <span class="tag">Agent Memory</span>
+                                <span class="tag">Memory Co-Management</span>
+                                <span class="tag">Coding Agents</span>
+                            </div>
+                        </div>
+                        <ul class="feature-list" aria-label="My work on MemoSync">
+                            <li>
+                                <strong>Context and intent in long-horizon interactions</strong>
+                                Investigated how AI agents maintain task context, user intent, and reusable knowledge
+                                during long-horizon interactions.
+                            </li>
+                            <li>
+                                <strong>Memory representation design</strong>
+                                Studied existing agent memory mechanisms and contributed to the conceptual design of
+                                memory representations and workflow structures.
+                            </li>
+                            <li>
+                                <strong>Evaluation</strong>
+                                Designed evaluation scenarios and comparison experiments to analyze the impact of
+                                memory organization strategies on task completion, consistency, and knowledge reuse.
+                            </li>
+                        </ul>
+                    </div>
+                    <figure class="project-figure">
+                        <img src="demo/MemoSync/interface.png" width="7760" height="4384" loading="lazy"
+                            alt="MemoSync interface showing long-term memory review, working memory, inline memory citations, a memory-use audit, and a session memory record" />
+                        <figcaption>
+                            MemoSync's shared memory interface: review proposed memories, select context for each turn,
+                            trace memory use, and inspect the session's Memory Record.
+                        </figcaption>
+                    </figure>
+                </article>
+
                 <article class="project-detail card" id="project-ltl" aria-labelledby="ltl-title">
                     <p class="eyebrow">Additional Research / Jul. 2025 &ndash; Present</p>
                     <h3 id="ltl-title">Multi-Robot Collaborative LTL Continuous Planning for Dynamic Environments</h3>
-                    <p class="muted">Supervisor: Prof. Zhongkui Li</p>
-                    <p class="muted">
-                        I designed an online task decomposition and replanning framework for heterogeneous robot
-                        teams executing linear temporal logic (LTL) tasks under dynamic events. I built a Gazebo
-                        simulation platform with Unitree Go2 and Scout, including task execution and state feedback
-                        interfaces, and benchmarked completion rate, planning time, and cumulative cost against static
-                        and periodic-replanning baselines. The work is currently being extended to physical robots.
-                    </p>
+                    <p class="muted"><span class="role role-assist">Research Assistant</span>Supervisor: Prof. Zhongkui Li</p>
+                    <ul class="feature-list" aria-label="My work on the LTL project">
+                        <li>
+                            <strong>Online task decomposition and replanning</strong>
+                            Designed an online framework for heterogeneous robot teams executing linear temporal
+                            logic (LTL) tasks under dynamic events.
+                        </li>
+                        <li>
+                            <strong>Gazebo simulation platform</strong>
+                            Built a multi-robot simulation platform with Unitree Go2 and Scout, including task
+                            execution and state feedback interfaces.
+                        </li>
+                        <li>
+                            <strong>Benchmarking</strong>
+                            Benchmarked completion rate, planning time, and cumulative cost against static and
+                            periodic-replanning baselines; currently extending the work to physical robots.
+                        </li>
+                    </ul>
                     <div class="project-actions">
                         <a class="button" href="https://github.com/1LCY007/gazebo_simulation.git" target="_blank"
                             rel="noopener">Gazebo Simulation on GitHub</a>
