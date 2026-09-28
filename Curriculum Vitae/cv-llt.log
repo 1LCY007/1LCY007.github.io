@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.12)  3 JUN 2026 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.12)  28 SEP 2026 09:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -965,9 +965,25 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `cv-llt.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'cv-llt.bbl' not found.
-
-No file cv-llt.bbl.
+Package biblatex Info: ... file 'cv-llt.bbl' found.
+ (./cv-llt.bbl
+LaTeX Font Info:    Trying to load font information for T1+Cabin-TLF on input line 86.
+ (d:/texlive/2025/texmf-dist/tex/latex/cabin/T1Cabin-TLF.fd
+File: T1Cabin-TLF.fd 2020/07/15 (autoinst) Font definitions for T1/Cabin-TLF.
+)
+LaTeX Font Info:    Font shape `T1/Cabin-TLF/m/n' aliased to
+(Font)              `T1/Cabin-TLF/regular/n' on input line 86.
+LaTeX Font Info:    Font shape `T1/Cabin-TLF/regular/n' will be
+(Font)              scaled to size 10.95pt on input line 86.
+LaTeX Font Info:    Font shape `T1/Cabin-TLF/m/n' aliased to
+(Font)              `T1/Cabin-TLF/regular/n' on input line 86.
+LaTeX Font Info:    Font shape `T1/Cabin-TLF/regular/n' will be
+(Font)              scaled to size 8.0pt on input line 86.
+LaTeX Font Info:    Font shape `T1/Cabin-TLF/b/n' aliased to
+(Font)              `T1/Cabin-TLF/bold/n' on input line 86.
+LaTeX Font Info:    Font shape `T1/Cabin-TLF/bold/n' will be
+(Font)              scaled to size 8.0pt on input line 86.
+)
 Package biblatex Info: Reference section=0 on input line 97.
 Package biblatex Info: Reference segment=0 on input line 97.
 Package hyperref Info: Link coloring ON on input line 97.
@@ -976,17 +992,13 @@ Package hyperref Info: Link coloring ON on input line 97.
 
 \c@mv@tabular=\count469
 \c@mv@boldtabular=\count470
-(d:/texlive/2025/texmf-dist/tex/latex/upquote/upquote.sty
+ (d:/texlive/2025/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
 )
 LaTeX Font Info:    Font shape `T1/Cochineal-OsF/m/n' will be
 (Font)              scaled to size 17.28pt on input line 98.
 LaTeX Font Info:    Font shape `T1/Cochineal-OsF/b/n' will be
 (Font)              scaled to size 17.28pt on input line 98.
-LaTeX Font Info:    Trying to load font information for T1+Cabin-TLF on input line 98.
- (d:/texlive/2025/texmf-dist/tex/latex/cabin/T1Cabin-TLF.fd
-File: T1Cabin-TLF.fd 2020/07/15 (autoinst) Font definitions for T1/Cabin-TLF.
-)
 LaTeX Font Info:    Font shape `T1/Cabin-TLF/b/n' aliased to
 (Font)              `T1/Cabin-TLF/bold/n' on input line 98.
 LaTeX Font Info:    Font shape `T1/Cabin-TLF/bold/n' will be
@@ -1021,22 +1033,18 @@ Overfull \hbox (5.27588pt too wide) in paragraph at lines 8--15
 [][]| 
  []
 
-) (./publications.tex
-LaTeX Font Info:    Font shape `T1/Cochineal-OsF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 17.
-LaTeX Font Info:    Trying to load font information for TS1+Cochineal-OsF on input line 19.
+) (./skills.tex
+LaTeX Font Info:    Trying to load font information for TS1+Cochineal-OsF on input line 12.
  (d:/texlive/2025/texmf-dist/tex/latex/cochineal/TS1Cochineal-OsF.fd
 File: TS1Cochineal-OsF.fd 2016/01/19 (msharpe) Font definitions for TS1/Cochineal-OsF.
 )
 LaTeX Font Info:    Font shape `TS1/Cochineal-OsF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 19.
-) (./skills.tex) (./misc.tex) (./misc.tex) (./misc.tex) (./misc.tex
+(Font)              scaled to size 10.95pt on input line 12.
+) (./misc.tex) (./misc.tex) (./misc.tex) (./misc.tex) (./personal.tex) (./referee.tex) (./referee.tex)
 
 [1
 
-{d:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/cabin/cbn_i3ioen.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/cochineal/coch_mzvjrl.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free0.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/cochineal/coch_qyvxxn.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/cochineal/coch_rwqxgv.enc} <./you.jpg>]) (./personal.tex) (./referee.tex) (./referee.tex)
-
-[2] (./cv-llt.aux)
+{d:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/cabin/cbn_i3ioen.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/cochineal/coch_mzvjrl.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free0.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/cochineal/coch_qyvxxn.enc}{d:/texlive/2025/texmf-dist/fonts/enc/dvips/cochineal/coch_rwqxgv.enc} <./you.jpg>] (./cv-llt.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1063,18 +1071,18 @@ Package logreq Info: Writing requests to 'cv-llt.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39851 strings out of 473190
- 801837 string characters out of 5719978
- 1602054 words of memory out of 5000000
- 62461 multiletter control sequences out of 15000+600000
- 717509 words of font info for 70 fonts, out of 8000000 for 9000
+ 39948 strings out of 473190
+ 804967 string characters out of 5719978
+ 1603054 words of memory out of 5000000
+ 62561 multiletter control sequences out of 15000+600000
+ 739149 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,14n,101p,1251b,1821s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/texlive/2025/texmf-dist/fonts/type1/impallari/cabin/Cabin-Bold.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/cochineal/Cochineal-Bold.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/cochineal/Cochineal-Italic.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/cochineal/Cochineal-Roman.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb>
-Output written on cv-llt.pdf (2 pages, 311593 bytes).
+<d:/texlive/2025/texmf-dist/fonts/type1/impallari/cabin/Cabin-Bold.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/cochineal/Cochineal-Bold.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/cochineal/Cochineal-Roman.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb>
+Output written on cv-llt.pdf (1 page, 276554 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
+ 100 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
  120 words of extra memory for PDF output out of 10000 (max. 10000000)
 
