@@ -4,7 +4,7 @@
 
 **Goal:** Remove public publication listings from the homepage and generated CV while keeping the CV link available in a less prominent footer location.
 
-**Architecture:** Keep the existing single-file homepage structure and CV LaTeX source. Remove publication markup from `index.html`, relocate the existing CV link into the footer, remove the publication input from the CV source, and rebuild the checked-in PDF from that source.
+**Architecture:** Keep the existing single-file homepage structure and CV LaTeX source. Remove publication markup from `index.html`, relocate the existing CV link into the footer, remove the publication input from the CV source, and redact the publication block from the separately maintained homepage-linked PDF.
 
 **Tech Stack:** Static HTML/CSS, LaTeX via `latexmk`, PDF text inspection via `pdftotext`, Git.
 
@@ -72,44 +72,26 @@ rg -n "ChunyangLuo_CV\.pdf" index.html
 
 Expected: exactly one result, in the footer.
 
-### Task 2: Remove publications from the CV source and rebuild the public PDF
+### Task 2: Remove publications from the CV source and redact the public PDF
 
 **Files:**
 - Modify: `Curriculum Vitae/cv-llt.tex:103-105`
-- Regenerate: `ChunyangLuo_CV.pdf`
+- Modify: `ChunyangLuo_CV.pdf`
 
 - [ ] **Step 1: Remove the publication input from the CV source**
 
 Delete the explanatory comments and `\input{publications}` so the document proceeds from `\makerubric{education}` directly to `\input{skills}`. Leave `Curriculum Vitae/publications.tex` and `Curriculum Vitae/own-bib.bib` unchanged for later restoration.
 
-- [ ] **Step 2: Rebuild the CV PDF from its source directory**
+- [ ] **Step 2: Redact the publication block from the homepage-linked CV PDF**
+
+Use a PDF redaction tool to remove the first-page `ONGOING MANUSCRIPT` heading and its manuscript entry, covering approximately `(30, 150)` to `(580, 209)` in page coordinates. Save the redacted PDF back to `ChunyangLuo_CV.pdf`; do not replace it with the separately maintained `Curriculum Vitae/cv-llt.pdf`.
+
+- [ ] **Step 3: Verify the redacted PDF has no publication list**
 
 Run:
 
 ```powershell
-latexmk -pdf -interaction=nonstopmode -halt-on-error cv-llt.tex
-```
-
-Working directory: `Curriculum Vitae`.
-
-Expected: exit code 0 and an updated `Curriculum Vitae/cv-llt.pdf`.
-
-- [ ] **Step 3: Copy the rebuilt PDF to the public homepage path**
-
-Run:
-
-```powershell
-Copy-Item -LiteralPath 'Curriculum Vitae\cv-llt.pdf' -Destination 'ChunyangLuo_CV.pdf' -Force
-```
-
-Expected: `ChunyangLuo_CV.pdf` is updated and remains the file referenced by the homepage footer.
-
-- [ ] **Step 4: Verify the generated PDF has no publication list**
-
-Run:
-
-```powershell
-pdftotext 'ChunyangLuo_CV.pdf' - | Select-String -Pattern 'Publications|MemoSync|Submitted to ACM CHI'
+pdftotext 'ChunyangLuo_CV.pdf' - | Select-String -Pattern 'ONGOING|MANUSCRIPT|MemoSync|under review|publication|Zhang, B|third author'
 ```
 
 Expected: no matching output.
@@ -121,12 +103,12 @@ Expected: no matching output.
 - Verify: `Curriculum Vitae/cv-llt.tex`
 - Verify: `ChunyangLuo_CV.pdf`
 
-- [ ] **Step 1: Confirm the source and homepage contain no publication index references**
+- [ ] **Step 1: Confirm the source and homepage contain no rendered publication index references**
 
 Run:
 
 ```powershell
-rg -n -i 'id="publications"|href="#publications"|>Publications<|Baiqiao Zhang.*Chunyang Luo|Submitted to ACM CHI' index.html 'Curriculum Vitae\cv-llt.tex'
+rg -n -i 'id="publications"|href="#publications"|>Publications<|\\input\{publications\}|Baiqiao Zhang.*Chunyang Luo|Submitted to ACM CHI' index.html 'Curriculum Vitae\cv-llt.tex'
 ```
 
 Expected: no output.
