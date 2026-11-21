@@ -17,6 +17,13 @@
 
 % Most commands and style definitions are in settings.sty.
 \usepackage{settings}
+% enumitem v3.11 renews the description environment, but the curve class does not
+% define it; provide a placeholder so the package can load (unused afterwards).
+\makeatletter
+\@ifundefined{description}{%
+  \newenvironment{description}{\begin{list}{}{}\item}{\end{list}}%
+}{}
+\makeatother
 \usepackage{enumitem}
 % If you need to further customise your biblatex setup e.g. with \DeclareFieldFormat etc please add them here AFTER loading settings.sty. For example, to remove the default "[Online] Available:" prefix before URLs when using the IEEE style:
 \DefineBibliographyStrings{english}{url={\textsc{url}}}
@@ -82,7 +89,7 @@
   \makefield{\faLightbulb[regular]}{\texttt{Multi-Agent Task Planning | LLM | embodied AI}}
   
   %  ========== 第四排：英语成绩 ==========
-  \makefield{\faLanguage}{\texttt{CET-6: 578} | IELTS: Overall 7.0 (expired; planning to retake)}
+  \makefield{\faLanguage}{\texttt{CET-6: 578} | IELTS: Overall 7.5}
 }
 
 

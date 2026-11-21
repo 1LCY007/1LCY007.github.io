@@ -1,8 +1,8 @@
-PWD d:/chunyangluo/1LCY007.github.io/Curriculum Vitae
+PWD D:/chunyangluo/1LCY007.github.io/Curriculum Vitae
 INPUT d:/texlive/2025/texmf.cnf
 INPUT d:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT d:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/chunyangluo/1LCY007.github.io/Curriculum Vitae/cv-llt.tex
+INPUT cv-llt.tex
 OUTPUT cv-llt.log
 INPUT d:/texlive/2025/texmf-dist/tex/latex/curve/curve.cls
 INPUT d:/texlive/2025/texmf-dist/tex/latex/curve/curve.cls
@@ -403,6 +403,12 @@ INPUT d:/texlive/2025/texmf-dist/fonts/tfm/impallari/cabin/Cabin-Regular-tlf-t1.
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/impallari/cabin/Cabin-Regular-tlf-t1.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/tfm/impallari/cabin/Cabin-Bold-tlf-t1.tfm
 INPUT d:/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
+INPUT ./cv-llt.out
+INPUT ./cv-llt.out
+INPUT cv-llt.out
+INPUT cv-llt.out
+INPUT ./cv-llt.out
+INPUT ./cv-llt.out
 OUTPUT cv-llt.out
 INPUT d:/texlive/2025/texmf-dist/tex/latex/upquote/upquote.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/upquote/upquote.sty
@@ -516,6 +522,7 @@ INPUT d:/texlive/2025/texmf-dist/fonts/enc/dvips/cochineal/coch_rwqxgv.enc
 INPUT cv-llt.aux
 INPUT ./cv-llt.out
 INPUT ./cv-llt.out
+INPUT cv-llt.run.xml
 OUTPUT cv-llt.run.xml
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/impallari/cabin/Cabin-Bold.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/cochineal/Cochineal-Bold.pfb
