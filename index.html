@@ -837,6 +837,8 @@
                         <span class="tag">Foundations of Machine Learning: 98</span>
                         <span class="tag">Probability and Statistics: 94</span>
                         <span class="tag">Introduction to Robotics: 89</span>
+                        <span class="tag">Engineering Optimization Design: 88</span>
+                        <span class="tag">LLM and Information Decision: 86</span>
                     </div>
                 </article>
             </div>
@@ -937,6 +939,10 @@
                             <h3 id="memosync-title">MemoSync: Co-Managing Developer-Agent Metamemory Across Contexts</h3>
                             <p class="muted"><span class="role role-assist">Research Assistant</span>Supervisor: Prof. Xiaojuan Ma</p>
                             <p class="muted">
+                                Paper: MemoSync: Co-managing developer-agent metamemory across contexts &mdash;
+                                <em>ACM CHI 2027 (under review)</em>.
+                            </p>
+                            <p class="muted">
                                 MemoSync turns an AI coding agent's memory into a shared representation that developers
                                 can inspect and control. The agent proposes reusable memories, while the developer
                                 reviews, edits, and assigns them to Personal, Project, or Session scopes to preserve
@@ -1010,8 +1016,46 @@
             <div class="shell">
                 <div class="section-head">
                     <h2 id="course-projects-title">Course Projects</h2>
-                    <p class="section-note">Project work at Peking University on continuity in AI-assisted development.</p>
+                    <p class="section-note">Course project work at Peking University on scientific machine learning and continuity in AI-assisted development.</p>
                 </div>
+                <article class="project-detail card" id="project-piern" aria-labelledby="piern-title">
+                    <p class="eyebrow">Course Project / Peking University &middot; Sept. 2025 &ndash; Jan. 2026 &middot; Grade 98</p>
+                    <h3 id="piern-title">PiERN: Computation-Reasoning Fusion for Scientific ML</h3>
+                    <p class="muted">
+                        PiERN decides how each scientific query should be answered: closed-form evaluation, a
+                        trained PDE surrogate, or LLM reasoning, so the language model is only invoked where a
+                        solver is unavailable.
+                    </p>
+                    <ul class="feature-list" aria-label="PiERN project details">
+                        <li>
+                            <strong>Three-path router</strong>
+                            Built a router that sends each scientific query down one of three paths &mdash;
+                            closed-form evaluation, a PDE surrogate, or LLM reasoning &mdash; so the language model
+                            is only used where a solver is unavailable.
+                        </li>
+                        <li>
+                            <strong>Unified surrogate interface</strong>
+                            Wrapped U-Net, FNO, and PINN surrogates behind one interface and benchmarked them on
+                            PDEBench-style diffusion-sorption, 1D advection, and 2D Navier-Stokes cases.
+                        </li>
+                        <li>
+                            <strong>Tokenization study</strong>
+                            Measured how tokenizing numeric fields destroys spatial structure, then tested a
+                            Transformer field encoder that cuts token count while keeping boundary conditions intact.
+                        </li>
+                    </ul>
+                    <div class="tag-list">
+                        <span class="tag">Scientific ML</span>
+                        <span class="tag">PDE Surrogates</span>
+                        <span class="tag">FNO / PINN</span>
+                        <span class="tag">LLM Reasoning</span>
+                        <span class="tag">Tokenization</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="button" href="https://github.com/1LCY007/PiERN-in-VLA" target="_blank"
+                            rel="noopener">View PiERN on GitHub</a>
+                    </div>
+                </article>
                 <article class="project-detail" id="project-repoflow" aria-labelledby="repoflow-title">
                     <div class="project-feature">
                         <div>
@@ -1121,8 +1165,8 @@
                                 <li>Open WebUI</li>
                                 <li>Apache Superset</li>
                                 <li>Model: Kimi-2.7-Code</li>
-                                <li>Result: lower token usage across all three projects, with the largest input-token
-                                    reductions on FastAPI and Superset.</li>
+                                <li>Result: input tokens down 57% (4.04M &rarr; 1.75M), output tokens down 44%, cached
+                                    tokens down 41% relative to runs without the skill.</li>
                             </ul>
                         </div>
                         <figure class="project-figure">
@@ -1149,8 +1193,13 @@
                         <div class="period">Spring 2026</div>
                         <h3>Alibaba DAMO Academy - Embodied Intelligence Bootcamp</h3>
                         <p class="muted">
-                            Built a robotic-arm visual-navigation demo integrating perception, control, and task
-                            execution.
+                            Took a small-object flipping task from goal decomposition to execution on a ROS-driven
+                            physical robotic arm, splitting it into grasp, in-hand rotation, and regrasp primitives.
+                        </p>
+                        <p class="muted">
+                            Collected and curated demonstration trajectories, then fine-tuned a policy model on the
+                            accumulated data &mdash; closing the loop from task decomposition to data collection to
+                            fine-tuning, with rollout failures feeding the next collection round.
                         </p>
                     </article>
                 </div>
@@ -1172,6 +1221,10 @@
                     <article class="card">
                         <div class="period">Honorable Mention</div>
                         <h3>MCM/ICM 2026</h3>
+                    </article>
+                    <article class="card">
+                        <div class="period">2025 &ndash; 2026</div>
+                        <h3>Merit Student and Third-class Scholarship, Peking University</h3>
                     </article>
                 </div>
             </div>
